@@ -25,7 +25,7 @@ public class TheWorld : MonoBehaviour  {
 
     private void Update()
     {
-        Vector3 v1 = Vector3.up; //  Init.transform.up;
+        Vector3 v1 = Init.transform.up; // Vector3.up; //  
         Vector3 v2 = Final.transform.up;
 
         Vector3 n = Vector3.Cross(v1, v2);
@@ -34,10 +34,10 @@ public class TheWorld : MonoBehaviour  {
         for (int i = 0; i < kNumSteps-1; i++)
         {
             Quaternion q = Quaternion.AngleAxis(i * delta, n);
-            steps[i].transform.localRotation = Init.transform.localRotation * q;
+            steps[i].transform.localRotation = q * Init.transform.localRotation;
         }
 
-        Quaternion inOneR = Quaternion.FromToRotation(Init.transform.up, Final.transform.up);
+        Quaternion inOneR = Quaternion.FromToRotation(Vector3.up, Final.transform.up);  // One step is from initial position of the object
         steps[kNumSteps - 1].transform.localRotation = inOneR;        
         
     }
