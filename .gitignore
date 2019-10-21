@@ -22,6 +22,9 @@ ExportedObj/
 *.svd
 *.pdb
 *.opendb
+# .exe will prevent gitbug from serving the webpage!
+*.exe
+*.EXE
 
 # Unity3D generated meta files
 *.pidb.meta
