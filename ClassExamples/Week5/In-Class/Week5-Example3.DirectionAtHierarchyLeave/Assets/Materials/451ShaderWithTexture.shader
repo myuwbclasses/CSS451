@@ -8,13 +8,12 @@
 	{
 		Tags { "RenderType"="Opaque" }
 		LOD 100
-        Cull off
 
 		Pass
 		{
 			CGPROGRAM
-			#pragma vertex MyVert
-			#pragma fragment MyFrag
+			#pragma vertex vert
+			#pragma fragment frag
 			// make fog work
 			#pragma multi_compile_fog
 			
@@ -35,25 +34,21 @@
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
             float4x4 MyXformMat;
-            fixed4 MyColor;
-            float4x4 CameraViewMatrix;
-            float4x4 CameraProjMatrix;
 			
-			v2f MyVert (appdata v)
+			v2f vert (appdata v)
 			{
 				v2f o;
 				o.vertex = mul(MyXformMat, v.vertex);
-                o.vertex = mul(CameraViewMatrix, o.vertex);
-                o.vertex = mul(CameraProjMatrix, o.vertex);
+                o.vertex = mul(UNITY_MATRIX_VP, o.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				return o;
 			}
 			
-			fixed4 MyFrag (v2f i) : SV_Target
+			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
-				return col * (1.0 - MyColor.a) + (MyColor * MyColor.a);
+				return col;
 			}
 			ENDCG
 		}
