@@ -82,6 +82,8 @@ public class CameraMatrices: MonoBehaviour {
         if (ProjectionMode == ProjectionMatrix.Perspective)
         {
             p = Matrix4x4.Perspective(c.fieldOfView, c.aspect, c.nearClipPlane, c.farClipPlane);
+
+            // depending on if you are working with GLSL or HLSL, this may not work!
         }  else
         {
             // remember Width/Height = aspect
