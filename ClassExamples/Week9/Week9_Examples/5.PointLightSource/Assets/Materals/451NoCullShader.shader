@@ -52,9 +52,12 @@ Shader "Unlit/451NoCullShader"
 
                 o.vertexWC = mul(UNITY_MATRIX_M, v.vertex); // this is in WC space!
                 // this is not pretty but we don't have access to inverse-transpose ...
-                float3 p = v.vertex + v.normal;
+                float3 p = v.vertex + 10 * v.normal;
+                        // Try removing the 10, when light source is close to the surface
+                        // Run into accuracy problem.
                 p = mul(UNITY_MATRIX_M, p);  // now in WC space
                 o.normal = normalize(p - o.vertexWC); // NOTE: this is in the world space!!
+                // o.normal = UnityObjectToWorldNormal(v.normal);
 				return o;
 			}
 			
@@ -81,6 +84,9 @@ Shader "Unlit/451NoCullShader"
 
 			fixed4 frag (v2f i) : SV_Target
 			{
+                // return fixed4(i.normal, 1.0);
+                    // This is to verify the value of the normal vector
+
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
                 
