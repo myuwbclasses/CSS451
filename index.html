@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS 451</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #426;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  text-align: center;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+a {font-size: 24px}
+
+h1 {font-size: 24px}
+h3 {font-size: 22px;
+text-align: justify;
+}
+
+/*header CSS styling*/
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #213;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #d3a302;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<header>
+  <img src="uwlogo.png" width="600" height="103" align="left"><br><br>
+  <h2>CSS 451 - 3D Computer Graphics</h2>
+  <h3>Introduces practical and popular three-dimensional (3-D) graphic algorithms. Examines modeling (how to build 3-D objects), animation (how to describe the motion of objects), and rendering (how to generate images of 3-D objects in animation).</h3>
+</header>
+
+<div class="topnav">
+  <a class="active" href="">Projects</a>
+  <a href="https://www.uwb.edu/">UWB</a>
+  <a href="https://www.uwb.edu/css">CSS</a>
+  <a href="http://faculty.washington.edu/ksung/">Kelvin Sung</a>
+</div>
+
+<hr style="border: 2px;" />
+<section>
+  <nav>
+   <ul>
+      <li><a href="PreviousYears/2019/index.html">Final Projects of 2019</a></li>
+	  <br>
+	  <a href="PreviousYears/2019/index.html">
+		<img src="PreviousYears/2019/2019page.PNG" width="414" height="414" >
+	  </a>
+   </ul>
+  </nav>
+  
+  <nav>
+   <ul>
+      <li><a href="PreviousYears/2018/index.html">Final Projects of 2018</a></li>
+	  <br>
+	  <a href="PreviousYears/2018/index.html">
+		<img src="PreviousYears/2018/2018page.PNG" width="414" height="414" >
+	  </a>
+   </ul>
+  </nav>
+  
+  <nav>
+   <ul>
+      <li><a href="PreviousYears/2017/index.html">Final Projects of 2017</a></li>
+	  <br>
+	  <a href="PreviousYears/2017/index.html">
+		<img src="PreviousYears/2017/2017page.PNG" width="414" height="414" >
+	  </a>
+   </ul>
+  </nav>
+  
+</section>
+
+
+</body>
+</html>
