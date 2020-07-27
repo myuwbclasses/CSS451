@@ -2,21 +2,7 @@
 <p>Intro and learn the tools. Please refer to our course Github file 
  <a class="" href="https://github.com/myuwbclasses/CSS451/tree/master/">our course Github</a> 
 for the source code.</p>
-<ul>
-	<li><br><strong>NEED TO DO: explain when we are defining classes, when are 
-	the classes instantiated</strong><ul>
-		<li><strong>When </strong>a GameObject is dragged/created in the Scene 
-		(shows in Hierarchy)</li>
-		<li>When a script is dragged into a GameObject that is in the 
-		world/Hierarchy</li>
-		<li>When a Prefab is created (in the Resource folder), NO NEW instances 
-		are created<ul>
-			<li>Only created when we instantiate a new PreFab</li>
-		</ul>
-		</li>
-	</ul>
-	</li>
-</ul>
+
 <p>&nbsp;</p>
 <h3><strong>Example 1. Intro To Tool: </strong>Working with GameObject</h3>
 <ul>
@@ -146,7 +132,6 @@ for the source code.</p>
 </ul>
 <p>&nbsp;</p>
 <h3><strong>Example 3.</strong>&nbsp;Components and Variables:&nbsp;</h3>
-<p>&nbsp;</p>
 <ul>
 <li>Two scripts:
 <ul>
@@ -204,7 +189,7 @@ for the source code.</p>
 <p>&nbsp;</p>
 <h3><strong>Example 4. MouseClickSelect</strong>: support mouse clicks</h3>
 <ul>
-<li>MaiinController_MouseSupport.cs (Source/UI_Support)</li>
+<li>MainController_MouseSupport.cs (Source/UI_Support)</li>
 <li>Notice C# Keyword: <strong>partial </strong>(separate source code files for the same class)</li>
 <li>MainController::DeleteSelectedCube();
 <ul>
@@ -274,4 +259,15 @@ for the source code.</p>
 <li>Problem: UI/Object two-way binding is not properly supported</li>
 </ul>
 </li>
+</ul>
+<hr>
+<strong>Make sure you understand:</strong> the difference between when a class is defined 
+and when the class is instantiated. 
+<ul>
+	<li><strong>Defined</strong>: when you typed in the code for a MonoBehavior 	object, and the code compiles where you can run the game.</li>
+	<li><strong>Instantiated</strong>: when a GameObject with the defined MonoBehavior object is created and shows up in the  Scene Hierarchy.</li>			 		
+	<li><strong>Instantiated</strong>:When a MonoBehavior script is dragged into a GameObject that is in the 
+		world/Hierarchy</li>
+	<li><strong>NOT Instantiated</strong>:When a Prefab with the MonoBehavior script is created (in the Resource folder), NO NEW instances are created</li>
+	<li><strong>Instantiated</strong>: When this PreFab is  created.</li>
 </ul>
