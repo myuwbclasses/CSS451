@@ -104,14 +104,23 @@ for the source code.</p>
 <li>Rect Transform: <a class="" href="https://www.youtube.com/watch?v=FeheZqu85WI" data-preview-alt="Rect Transform - Unity Official Tutorials">Rect Transform - Unity Official Tutorials</a></li>
 </ul>
 </li>
-<li>By default, Position specification is a percentage of the entire display</li>
+<li>By default, Position specification has units in pixels measured from the reference position.</li>
 </ul>
+<br>
 <li><strong>MainController</strong>.cs: Script for the main canvas
 <ul>
 <li>&ldquo;using&rdquo; UnityEngine.UI</li>
 <li><strong>Note</strong> on Prefab instantiation: <strong>MyCube </strong>must be located in <strong>Resources </strong>folder</li>
+<li><strong>CreateButton.onClick.AddListener(CreateNewCube)</strong>: can be accomplished via editor UI:
+<ul>
+	<li>Select the CreateButton, look for onClick area in the Inspector, click on "+" to add response.</li>
+	<li>Drag <strong>MainCanvas</strong>here (we want to call a function on a component in MainCanvas</li>
+	<li>Select the CreateNewCube function on the MainController component.</li>
+	<li>Learn: <em>almost</em> everything you can do via editor UI you can do via code in scripts.
+</ul>
 </ul>
 </li>
+<br>
 <li>Create UI elements <em>as children </em>to the MainCanvas! (--&gt;RMB--&gt;UI)
 <ul>
 <li>UI elements are created in the UI-layer, see how to view/hide layers</li>
@@ -135,57 +144,60 @@ for the source code.</p>
 <ul>
 <li>Two scripts:
 <ul>
-<li><strong>MoveInX</strong>: behavior is simple
-<ul>
-<li>Bounces in X</li>
-<li>Allow changing of bouncing speed (Inc/Dec Delta)</li>
-</ul>
-</li>
-<li><strong>MainControl</strong>:
-<ul>
-<li>Two references to components
-<ul>
-<li>An object: the moving cube (Object)</li>
-<li>A script: the moving component on the cube</li>
+	<li><strong>MoveInX</strong>: behavior is simple
+	<ul>
+		<li>Bounces in X</li>
+		<li>Allow changing of bouncing speed (Inc/Dec Delta)</li>
+	</ul>
+		</li>
+	<li><strong>MainControl</strong>:
+	<ul>
+		<li>Two references to components
+		<ul>
+			<li>An object: the moving cube (Object)</li>
+			<li>A script: the moving component on the cube</li>
+		</ul>
+			</li>
+	</ul>
+	</li>
 </ul>
 </li>
 <li>Three buttons:
 <ul>
-<li>DeleteMoveInX: delete the moving script (component)</li>
-<li>CreateCube + MoveInX: creates a MoveInX for the cube (what happens when a cube has two MoveInX?</li>
-<li>DeleteCube: deletes the cube</li>
-</ul>
-</li>
+	<li>DeleteMoveInX: delete the moving script (component)</li>
+	<li>CreateCube + MoveInX: creates a MoveInX for the cube (what happens when a cube has two MoveInX?</li>
+	<li>DeleteCube: deletes the cube</li>
 </ul>
 </li>
 <li>Run the game:&nbsp;Observe the Cube, its speed alternates (controlled by MainControl). Try the following:&nbsp;
 <ul>
-<li>Select the <strong>CubeHasMoveComponent </strong>from the Hierarchy and examine its components in the Inspector</li>
-<li>Click on DeleteCube'sMove, what happened?</li>
-<li>Click on CreateCuve + MoveInX, what happens? What happens when you click on this multiple times?</li>
-<li>Click on DeleteCube, and click on CreateCube again, what happens now? (A new Cube is created)</li>
+	<li>Select the <strong>CubeHasMoveComponent </strong>from the Hierarchy and examine its components in the Inspector</li>
+	<li>Click on DeleteCube'sMove, what happened?</li>
+	<li>Click on CreateCuve + MoveInX, what happens? What happens when you click on this multiple times?</li>
+	<li>Click on DeleteCube, and click on CreateCube again, what happens now? (A new Cube is created)</li>
 </ul>
 </li>
 <li><strong>First point to note: </strong>"C#&nbsp;Scripts" (MonoBehavior objects) are "components", just like GameObject
 <ul>
-<li>Notice: how these things are Destroy() [same function call to remove them]</li>
+	<li>Notice: how these things are Destroy() [same function call to remove them]</li>
 </ul>
 </li>
 <li><strong>Second point to note:&nbsp;</strong>components can be referenced by variables&nbsp; and create/delete dynamically at run time.
 <ul>
-<li>Notice: both GameObject and "C# Scripts" can be created and deleted during run time.</li>
-<li>The action of "draggin" a script onto a GameObject to associate the defined behavior with the object, actually:
-<ul>
-<li>Create a new instance of the script object (e.g., MoveInX)</li>
-<li>Create a reference from the GameObject to the new script (e.g., the MoveInX object.)</li>
-<li>This is exactly the same as calling GameObject.AddComponent&lt;DataType&gt;() [called in MainControl::CreateComponent()].&nbsp;</li>
+	<li>Notice: both GameObject and "C# Scripts" can be created and deleted during run time.</li>
+	<li>The action of "draggin" a script onto a GameObject to associate the defined behavior with the object, actually:
+		<ul>
+			<li>Create a new instance of the script object (e.g., MoveInX)</li>
+			<li>Create a reference from the GameObject to the new script (e.g., the MoveInX object.)</li>
+			<li>This is exactly the same as calling GameObject.AddComponent&lt;DataType&gt;() [called in MainControl::CreateComponent()].&nbsp;</li>
+		</ul>
+	</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+
+
+
 <p>&nbsp;</p>
 <h3><strong>Example 4. MouseClickSelect</strong>: support mouse clicks</h3>
 <ul>
