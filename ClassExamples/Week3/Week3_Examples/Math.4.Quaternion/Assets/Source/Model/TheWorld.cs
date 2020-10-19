@@ -5,6 +5,7 @@ using UnityEngine;
 public class TheWorld : MonoBehaviour  {
 
     public GameObject Init, Final;  // defines the initial and final arrows
+    public bool LastUseUnity = true;
     private GameObject[] steps;
     private int kNumSteps = 15;
 
@@ -36,9 +37,12 @@ public class TheWorld : MonoBehaviour  {
             Quaternion q = Quaternion.AngleAxis(i * delta, n);
             steps[i].transform.localRotation = q * Init.transform.localRotation;
         }
-
-        Quaternion inOneR = Quaternion.FromToRotation(Vector3.up, Final.transform.up);  // One step is from initial position of the object
-        steps[kNumSteps - 1].transform.localRotation = inOneR;        
-        
+        Quaternion inOneR;
+        if (LastUseUnity) {
+            inOneR = Quaternion.FromToRotation(Vector3.up, Final.transform.up);  // One step is from initial position of the object 
+        }  else {
+            inOneR = Quaternion.AngleAxis(theta, n);
+        }
+       steps[kNumSteps - 1].transform.localRotation = inOneR;
     }
 }
