@@ -16,7 +16,7 @@ public class TheWorld : MonoBehaviour  {
 
     private void Update()
     {
-        Matrix4x4 m = Matrix4x4.TRS(Vector3.zero, TreeXform.localRotation, Vector3.one);
+        Matrix4x4 m = Matrix4x4.TRS(Vector3.zero, TreeXform.localRotation, Vector3.one);  // or Matrix4x4.Rotate(TreeXform.localRotation)
         // Note: the end result is transforming a Quaternion into a matrix
         //       this matrix is _very_ interesting!!
         // Ortho-Normal!!

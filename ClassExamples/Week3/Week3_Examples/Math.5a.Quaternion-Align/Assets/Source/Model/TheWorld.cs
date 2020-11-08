@@ -86,14 +86,15 @@ private void Start()
                 steps[i].SetActive(false);
         }
 
+        GameObject lastBlueObj = steps[kNumSteps - 1];
         if (LastUseUnity) {
 
             Quaternion alignUp = Quaternion.FromToRotation(Vector3.up, Final.transform.up);
             // now align the right vectors
-            steps[kNumSteps - 1].transform.localRotation = alignUp;
+            lastBlueObj.transform.localRotation = alignUp;
             
-            Quaternion alignRight = Quaternion.FromToRotation(steps[kNumSteps - 1].transform.right, Final.transform.right);
-            steps[kNumSteps - 1].transform.localRotation = alignRight * steps[kNumSteps - 1].transform.localRotation;
+            Quaternion alignRight = Quaternion.FromToRotation(lastBlueObj.transform.right, Final.transform.right);
+            lastBlueObj.transform.localRotation = alignRight * lastBlueObj.transform.localRotation;
 
         }  else {
             int last = kNumSteps - 1;
