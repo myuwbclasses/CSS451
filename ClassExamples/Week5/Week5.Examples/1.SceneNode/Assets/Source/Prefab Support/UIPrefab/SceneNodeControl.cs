@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SceneNodeControl : MonoBehaviour {
     public Dropdown TheMenu = null;
     public SceneNode TheRoot = null;
-    public XfromControl XformControl = null;
+    public XformControl XformControl = null;
 
     const string kChildSpace = "  ";
     List<Dropdown.OptionData> mSelectMenuOptions = new List<Dropdown.OptionData>();

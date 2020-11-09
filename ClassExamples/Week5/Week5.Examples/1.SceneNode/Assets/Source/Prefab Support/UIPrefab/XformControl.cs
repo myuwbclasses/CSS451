@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class XfromControl : MonoBehaviour {
+public class XformControl : MonoBehaviour {
     public Toggle T, R, S;
     public SliderWithEcho X, Y, Z;
     public Text ObjectName;
