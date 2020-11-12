@@ -45,7 +45,20 @@ public class AnalyzeXform : MonoBehaviour {
             Vector3 z = concatMatrix.GetColumn(2);
             Vector3 size = new Vector3(x.magnitude, y.magnitude, z.magnitude);
             WorldTransform.localScale = size;
-            WorldTransform.localRotation = Quaternion.LookRotation(z/size.z, y/size.y);
+
+            // Align rotation
+            // WorldTransform.localRotation = Quaternion.LookRotation(z / size.z, y / size.y);
+            // OR
+            y.Normalize();
+            z.Normalize();
+            // First, align up
+            float angle = Mathf.Acos(Vector3.Dot(Vector3.up, y)) * Mathf.Rad2Deg;
+            Vector3 axis = Vector3.Cross(Vector3.up, y);
+            WorldTransform.localRotation = Quaternion.AngleAxis(angle, axis);
+            // Now, align forward
+            angle = Mathf.Acos(Vector3.Dot(WorldTransform.forward, z)) * Mathf.Rad2Deg;
+            axis = Vector3.Cross(WorldTransform.forward, z);
+            WorldTransform.localRotation = Quaternion.AngleAxis(angle, axis) * WorldTransform.localRotation;
         }
 	}
 }

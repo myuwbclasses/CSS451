@@ -10,7 +10,8 @@ public class SceneNode : MonoBehaviour {
     public List<NodePrimitive> PrimitiveList;
 
     public Transform AxisFrame = null;
-    private Vector3 kDefaultTreeTip = new Vector3(0.19f, 12.69f, 3.88f);
+    public Vector3 kDefaultTreeTip = new Vector3(0.19f, 12.69f, 3.88f);
+    public bool UseUnity = false;
 
 	// Use this for initialization
 	protected void Start () {
@@ -55,6 +56,25 @@ public class SceneNode : MonoBehaviour {
         if (AxisFrame != null)
         {
             AxisFrame.localPosition = mCombinedParentXform .MultiplyPoint(kDefaultTreeTip);
+
+            // 
+            // What is going on in the next two lines of code?
+            Vector3 up = mCombinedParentXform.GetColumn(1).normalized;
+            Vector3 forward = mCombinedParentXform.GetColumn(2).normalized;
+
+            if (UseUnity) {
+                AxisFrame.localRotation = Quaternion.LookRotation(forward, up);
+            } else {
+                // First align up direction, remember that the default AxisFrame.up is simply the y-axis
+                float angle = Mathf.Acos(Vector3.Dot(Vector3.up, up)) * Mathf.Rad2Deg;
+                Vector3 axis = Vector3.Cross(Vector3.up, up);
+                AxisFrame.localRotation = Quaternion.AngleAxis(angle, axis);
+
+                // Now, align the forward axis
+                angle = Mathf.Acos(Vector3.Dot(AxisFrame.transform.forward, forward)) * Mathf.Rad2Deg;
+                axis = Vector3.Cross(AxisFrame.transform.forward, forward);
+                AxisFrame.localRotation = Quaternion.AngleAxis(angle, axis) * AxisFrame.localRotation;
+            }
         }
     }
 }
