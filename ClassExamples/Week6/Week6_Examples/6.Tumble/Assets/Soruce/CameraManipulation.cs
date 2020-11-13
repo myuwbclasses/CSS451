@@ -59,12 +59,14 @@ public class CameraManipulation : MonoBehaviour {
         Quaternion q = Quaternion.AngleAxis(Direction * RotateDelta, transform.right);
 
         // 2. we need to rotate the camera position
-        Matrix4x4 r = Matrix4x4.TRS(Vector3.zero, q, Vector3.one);
+        Matrix4x4 r = Matrix4x4.Rotate(q);
         Matrix4x4 invP = Matrix4x4.TRS(-LookAtPosition.localPosition, Quaternion.identity, Vector3.one);
         r = invP.inverse * r * invP;
         Vector3 newCameraPos = r.MultiplyPoint(transform.localPosition);
         transform.localPosition = newCameraPos;
-        transform.LookAt(LookAtPosition);
+        
+        // transform.LookAt(LookAtPosition);
+        transform.localRotation = q * transform.localRotation;
 
         if (Mathf.Abs(Vector3.Dot(newCameraPos.normalized, Vector3.up)) > 0.7071f) // this is about 45-degrees
         {

@@ -31,7 +31,7 @@ public class CameraMatrices: MonoBehaviour {
         switch (ViewMatrixCompute)
         {
             case ViewMatrixMode.UseTransformRotate:
-                r = Matrix4x4.TRS(Vector3.zero, transform.localRotation, Vector3.one);
+                r = Matrix4x4.Rotate(transform.localRotation);
                 r.SetColumn(2, -r.GetColumn(2));
                 r = r.inverse;
                 break;
