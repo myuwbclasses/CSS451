@@ -30,9 +30,12 @@ public class CameraManipulation : MonoBehaviour {
             case LookAtCompute.QuatLookRotation:
                 // Viewing vector is from transform.localPosition to the lookat position
                 Vector3 V = LookAtPosition.localPosition - transform.localPosition;
-                Vector3 W = Vector3.Cross(-V, transform.up);
+                Vector3 W = Vector3.Cross(-V, Vector3.up);
                 Vector3 U = Vector3.Cross(W, -V);
-                transform.localRotation = Quaternion.LookRotation(V, U);
+                // transform.localRotation = Quaternion.LookRotation(V, U);
+                transform.localRotation = Quaternion.FromToRotation(Vector3.up, U);
+                Quaternion alignU = Quaternion.FromToRotation(transform.forward, V);
+                transform.localRotation = alignU * transform.localRotation;
                 break;
 
             case LookAtCompute.TransformLookAt:
