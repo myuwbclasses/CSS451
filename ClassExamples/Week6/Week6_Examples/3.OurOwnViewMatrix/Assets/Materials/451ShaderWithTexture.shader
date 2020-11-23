@@ -40,9 +40,9 @@
 			v2f MyVert (appdata v)
 			{
 				v2f o;
-				o.vertex = mul(MyXformMat, v.vertex);
-                o.vertex = mul(CameraViewMatrix, o.vertex);
-                o.vertex = mul(UNITY_MATRIX_P, o.vertex);
+				o.vertex = mul(MyXformMat, v.vertex);  // Object to Wolrd (From SceneNode + Primitive/GameObject)
+                o.vertex = mul(CameraViewMatrix, o.vertex);  // From Camera's View: World to View transform
+                o.vertex = mul(UNITY_MATRIX_P, o.vertex);    // From Camera's FOV+N+F: View to Perspective
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				return o;
 			}

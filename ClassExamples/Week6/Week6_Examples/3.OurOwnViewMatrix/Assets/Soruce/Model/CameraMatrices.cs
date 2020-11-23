@@ -3,6 +3,11 @@ using System.Collections;
 
 public class CameraMatrices: MonoBehaviour {
     
+    // Cannot do axis aligned rotations, 
+    // this is because view space with viewing direction in the negative z-axis
+    // it is essentially in the right handed coordinate system
+    // Quaternion rotations assume Left-handed coordinate system
+    // 
     public enum ViewMatrixMode {
         UseTransformRotate = 0,
         SetMatrixCol = 1,
