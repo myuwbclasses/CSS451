@@ -55,6 +55,48 @@ public partial class MyMesh : MonoBehaviour {
 
         InitControllers(v);
         InitNormals(v, n);
+
+        #region define a circle
+        //{
+        //    Vector3 initSize = new Vector3(0.2f, 0.2f, 0.2f);
+        //    Vector3 p;
+        //    const int kNumVertex = 30;
+        //    const float kDeltaTheta = (360f / kNumVertex) * Mathf.Deg2Rad;  // dTheta in randian
+        //    const float kRadius = 5f;
+        //    for (int i = 0; i < kNumVertex; i++)
+        //    {
+        //        GameObject s = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //        s.transform.localScale = initSize;
+        //        p.x = kRadius * Mathf.Cos(i * kDeltaTheta);
+        //        p.y = 0f;
+        //        p.z = kRadius * Mathf.Sin(i * kDeltaTheta);
+        //        s.transform.localPosition = p;
+        //    }
+        //}
+        #endregion 
+
+        {
+            const int kNum = 10;
+            const float kdTheta = (360f / kNum) * Mathf.Deg2Rad;
+            Vector3 kSize = new Vector3(0.1f, 0.1f, 0.1f);
+            Vector3 p;
+            const float kRadius = 3f;
+            const float delta = 2f;
+            for (int h = 0; h < kNum; h++)
+            {
+                float yVal = h * delta;
+                for (int i = 0; i < kNum; i++)
+                {
+                    GameObject s = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    s.transform.localScale = kSize;
+                    p.x = kRadius * Mathf.Cos(i * kdTheta);
+                    p.y = yVal;
+                    p.z = kRadius * Mathf.Sin(i * kdTheta);
+                    s.transform.localPosition = p;
+                }
+            }
+
+        }
     }
 
     // Update is called once per frame
