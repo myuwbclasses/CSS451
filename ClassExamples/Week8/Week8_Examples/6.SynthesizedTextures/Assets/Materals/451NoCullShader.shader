@@ -9,7 +9,9 @@ Shader "Unlit/451NoCullShader"
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType" = "Opaque" }
+		// Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+		// Blend SrcAlpha OneMinusSrcAlpha
 		LOD 200
 		Cull Off
 

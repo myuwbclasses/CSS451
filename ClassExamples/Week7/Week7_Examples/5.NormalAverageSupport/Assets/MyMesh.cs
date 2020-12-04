@@ -75,28 +75,6 @@ public partial class MyMesh : MonoBehaviour {
         //}
         #endregion 
 
-        {
-            const int kNum = 10;
-            const float kdTheta = (360f / kNum) * Mathf.Deg2Rad;
-            Vector3 kSize = new Vector3(0.1f, 0.1f, 0.1f);
-            Vector3 p;
-            const float kRadius = 3f;
-            const float delta = 2f;
-            for (int h = 0; h < kNum; h++)
-            {
-                float yVal = h * delta;
-                for (int i = 0; i < kNum; i++)
-                {
-                    GameObject s = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    s.transform.localScale = kSize;
-                    p.x = kRadius * Mathf.Cos(i * kdTheta);
-                    p.y = yVal;
-                    p.z = kRadius * Mathf.Sin(i * kdTheta);
-                    s.transform.localPosition = p;
-                }
-            }
-
-        }
     }
 
     // Update is called once per frame
