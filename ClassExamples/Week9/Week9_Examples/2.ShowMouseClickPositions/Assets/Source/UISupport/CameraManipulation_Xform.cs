@@ -46,6 +46,9 @@ public partial class CameraManipulation : MonoBehaviour
             Vector3 worldPt;
             Camera c = GetComponent<Camera>();
             ShowIndicators(true);
+
+            // compute worldPt (on near plane) by transforming from viewport coordinate (a percentage) 
+            // to an actual position on the near plane (porportionally) scalled.
             worldPt = mNearPlane.GetLL() + viewportPt.x * mNearPlane.GetWidth() * transform.right +
                                            viewportPt.y * mNearPlane.GetHeight() * transform.up;
             // now compute points along the vector from eye to worldPt
