@@ -44,6 +44,7 @@ public class SimpleMotionPhysics : MonoBehaviour
                 Velocity *= Elasticity; // simply slow down
             } else
             {
+#if KelvinOriginal
                 // if not parallel, then, we can construct an axisframe
                 Vector3 w = Vector3.Cross(n, v); // in the direction perpendicular to both n and v
                 Vector3 u = Vector3.Cross(w, n); // in the direction perpendicular to both n and w
@@ -57,8 +58,18 @@ public class SimpleMotionPhysics : MonoBehaviour
                 float wSize = Vector3.Dot(w, Velocity);
                 float uSize = Vector3.Dot(u, Velocity);
                 Vector3 nDir = nSize * n;
-                Vector3 uwDir = wSize * w + uSize * u;
-                Velocity = Elasticity * nDir + (1f-Friction) * uwDir;
+                Vector3 tDir = wSize * w + uSize * u;
+                Velocity = Elasticity * nDir + (1f-Friction) * tDir;
+#else
+                // Di Wang in class pointed out the above is unnecessary
+
+                // Decompose into n-direction and the rest
+                float nSize = Vector3.Dot(n, Velocity);
+                Vector3 nDir = nSize * n;
+                Vector3 tDir = Velocity - nDir; // t as in direction that is tangential to the normal
+                // 
+                Velocity = Elasticity * nDir + (1f - Friction) * tDir;
+#endif
             }
         }
 
