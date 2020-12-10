@@ -36,7 +36,7 @@ Shader "Unlit/451NoCullShader"
 			};
 
 			sampler2D _MainTex;
-			float4 _MainTex_ST;
+			float4 _MainTex_ST;  // must define to support TRANSFORM_TEX
 			
 			v2f vert (appdata v)
 			{

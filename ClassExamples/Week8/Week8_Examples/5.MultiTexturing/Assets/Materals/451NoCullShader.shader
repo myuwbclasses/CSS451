@@ -5,7 +5,7 @@ Shader "Unlit/451NoCullShader"
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-        _SecTex("Second Texture", 2D) = "white" {}
+        _SecTex ("Second Texture", 2D) = "white" {}
 	}
 	SubShader
 	{
@@ -39,7 +39,9 @@ Shader "Unlit/451NoCullShader"
 			};
 
 			sampler2D _MainTex;
+			// float4 _MainTex_ST;  // must define to support TRANSFORM_TEX
             sampler2D _SecTex;
+			float4 _SecTex_ST;  // must define to support TRANSFORM_TEX
 			
 			float MyTexOffset_X;
 			float MyTexOffset_Y;
@@ -57,7 +59,8 @@ Shader "Unlit/451NoCullShader"
 					o.uv.y = v.uv.y * MyTexScale_Y + MyTexOffset_Y;
 				o.normal = v.normal; // NOTE: this is in the original world space!!
 
-                o.uv1 = v.uv1;  // passing on the second texture
+                // o.uv1 = v.uv1;  // passing on the second texture
+				o.uv1 = TRANSFORM_TEX(v.uv1, _SecTex);
 				return o;
 			}
 			
