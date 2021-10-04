@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ObjectControl : MonoBehaviour
 {
-
-    private RectTransform mControlLocation = null;
     private Text mUILabel = null;
     private Button mDeleteButton = null;
     private Slider mObjectSizeSlider = null;
@@ -18,7 +16,6 @@ public class ObjectControl : MonoBehaviour
     void Start()
     {
         // let's find all the GUI elements
-        mControlLocation = transform as RectTransform;
         mUILabel = transform.Find("GroupLabel").GetComponent<Text>();
         mDeleteButton = transform.Find("DeleteButton").GetComponent<Button>();
         mObjectSizeSlider = transform.Find("SizeControl").GetComponent<Slider>();
