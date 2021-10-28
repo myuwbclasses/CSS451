@@ -36,6 +36,7 @@ public class XformLoader : MonoBehaviour {
         pm[12] = PivotOffset.x;    // col-3, row-0
         pm[13] = PivotOffset.y;    // col-3, row-1
         pm[14] = PivotOffset.z;    // col-3, row-2
+        pm = Matrix4x4.Translate(PivotOffset);
 
         Matrix4x4 ipm = Matrix4x4.identity;  // inverse pivot translation
         ipm[12] = -pm[12];    // col-3, row-0
