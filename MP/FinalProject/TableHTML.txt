@@ -1,0 +1,21 @@
+<table border="1" >
+<tr>
+<td align="center" style="text-align:left;">
+  <img border ="0" src="screenShot/logo.png" width="122px" /><br />
+
+    <b>Developers</b></br >
+        ABC<br />
+        ABC<br />
+</td>
+<td>
+    <p><b><u>App Name:</u></b></p> 
+   <p>Short Description</p>
+   <p>
+   <a href="Proposal.ppt">Project proposal</a><br />
+
+   <img border="0" src="screenshot/shot1.png" width="150px"/>
+   <img border="0" src="screenshot/shot2.png" width="150px"/>
+   <img border="0" src="screenshot/shot3.png" width="150px"/>
+</td>
+</tr>
+</table>
