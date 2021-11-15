@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraManipulation : MonoBehaviour {
 
     public enum LookAtCompute {
-        QuatLookRotation = 0,
-        TransformLookAt = 1
+        OurOwnQuatRotation = 0,
+        TransformLookAt = 1,
+        QuatLookRotation = 2
     };
 
     public Transform LookAtPosition = null;
@@ -27,7 +28,7 @@ public class CameraManipulation : MonoBehaviour {
 
         switch (ComputeMode)
         {
-            case LookAtCompute.QuatLookRotation:
+            case LookAtCompute.OurOwnQuatRotation:
                 // Viewing vector is from transform.localPosition to the lookat position
                 Vector3 V = LookAtPosition.localPosition - transform.localPosition;
                 Vector3 W = Vector3.Cross(-V, Vector3.up);
@@ -40,6 +41,12 @@ public class CameraManipulation : MonoBehaviour {
 
             case LookAtCompute.TransformLookAt:
                 transform.LookAt(LookAtPosition);
+                break;
+
+            case LookAtCompute.QuatLookRotation:
+                Vector3 forward = LookAtPosition.localPosition - transform.localPosition;
+                Quaternion q = Quaternion.LookRotation(forward, Vector3.up);
+                transform.localRotation = q;
                 break;
         }
 	}
