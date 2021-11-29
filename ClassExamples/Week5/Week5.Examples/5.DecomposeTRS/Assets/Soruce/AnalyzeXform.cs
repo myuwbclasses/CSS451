@@ -58,6 +58,7 @@ public class AnalyzeXform : MonoBehaviour {
             // Now, align forward
             angle = Mathf.Acos(Vector3.Dot(WorldTransform.forward, z)) * Mathf.Rad2Deg;
             axis = Vector3.Cross(WorldTransform.forward, z);
+            Debug.Log("Rotation Axis: " + axis);
             WorldTransform.localRotation = Quaternion.AngleAxis(angle, axis) * WorldTransform.localRotation;
         }
 	}

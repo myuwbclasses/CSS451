@@ -31,8 +31,8 @@ private void Start()
         Vector3 v1v2Axis = Vector3.Cross(initUp, finalUp);
         float v1v2Theta = Mathf.Acos(Vector3.Dot(initUp, finalUp)) * Mathf.Rad2Deg; // we know v1 and v2 are normalized
 
-        if (v1v2Axis.magnitude < float.Epsilon)
-            return;
+       // if (v1v2Axis.magnitude < float.Epsilon)
+         //   return;
 
         if (ShowSteps)
         {
@@ -102,6 +102,7 @@ private void Start()
             steps[last].transform.localRotation = alignUp;
 
             Vector3 rAxis = Vector3.Cross(steps[last].transform.right, Final.transform.right);
+            // Debug.Log ("Axis=" + rAxis + " " + steps[last].transform.up);
             float rAngle = Mathf.Acos(Vector3.Dot(steps[last].transform.right, Final.transform.right)) * Mathf.Rad2Deg;
             Quaternion alignRight = Quaternion.AngleAxis(rAngle, rAxis);
             steps[last].transform.localRotation = alignRight * steps[last].transform.localRotation;
