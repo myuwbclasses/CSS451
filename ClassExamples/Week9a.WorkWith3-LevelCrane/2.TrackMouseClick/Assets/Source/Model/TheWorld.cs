@@ -13,7 +13,7 @@ public class TheWorld : MonoBehaviour  {
     public Transform FrontOrg;
     public Transform FrontTip;
 
-    public Transform TargetPos;     // This is added back in
+    public Transform TargetPos;
 
     public bool TrackTarget = false;
     public bool RotateRoot = false;
