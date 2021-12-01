@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadLight : MonoBehaviour {
     public PointLight ALight;
 
-	void OnPreRender()
+	void Update()
     {
         ALight.LoadLightToShader();
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadLight : MonoBehaviour {
     public Transform LightPosition;
 
-	void OnPreRender()
+	void Update()
     {
         Shader.SetGlobalVector("LightPosition", LightPosition.localPosition);
     }
