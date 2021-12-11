@@ -47,7 +47,7 @@ Shader "Unlit/451NoCullShader"
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);   // WHAT IS THIS DOING?
                 o.color = v.color;  // simply pass these on
 				o.normal = mul(UNITY_MATRIX_IT_MV, v.normal); 
-                            // NOTE: transform the object space normal by Inrevse Transpose into World space
+                            // NOTE: transform the object space normal by Inrevse Transpose into the View Space
 				return o;
 			}
 			

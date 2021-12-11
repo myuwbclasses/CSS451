@@ -61,7 +61,7 @@ Shader "Unlit/451NoCullShader"
 				// replace with the following
 					o.uv.x = v.uv.x * MyTexScale_X + MyTexOffset_X;
 					o.uv.y = v.uv.y * MyTexScale_Y + MyTexOffset_Y;
-				o.normal = v.normal; // NOTE: this is in the original world space!!
+				o.normal = v.normal; // NOTE: this is in the original object space!!
 
                 o.uv1 = v.uv1;  // passing on the second texture
 				return o;

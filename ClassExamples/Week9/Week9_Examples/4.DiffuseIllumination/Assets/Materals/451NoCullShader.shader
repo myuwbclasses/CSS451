@@ -50,7 +50,7 @@ Shader "Unlit/451NoCullShader"
                 o.vertexWC = mul(UNITY_MATRIX_M, v.vertex); // this is in WC space!
                 // this is not pretty but we don't have access to inverse-transpose ...
                 float3 p = v.vertex + v.normal;
-                p = mul(UNITY_MATRIX_M, p);  // now in WC space
+                p = mul(UNITY_MATRIX_M, float4(p, 1));  // now in WC space
                 o.normal = normalize(p - o.vertexWC); // NOTE: this is in the world space!!
 				return o;
 			}
@@ -68,6 +68,8 @@ Shader "Unlit/451NoCullShader"
                 
                 float diff = ComputeDiffuse(i);
                 return col * diff;
+				// return fixed4(diff, diff, diff, 1);   // for debugging
+				// return fixed4(i.normal, 1);  // for debugging
 			}
 
 			ENDCG

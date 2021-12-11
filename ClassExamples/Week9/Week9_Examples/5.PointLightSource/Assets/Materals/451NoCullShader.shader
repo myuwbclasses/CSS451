@@ -55,7 +55,7 @@ Shader "Unlit/451NoCullShader"
                 float3 p = v.vertex + 10 * v.normal;
                         // Try removing the 10, when light source is close to the surface
                         // Run into accuracy problem.
-                p = mul(UNITY_MATRIX_M, p);  // now in WC space
+                p = mul(UNITY_MATRIX_M, float4(p,1));  // now in WC space
                 o.normal = normalize(p - o.vertexWC); // NOTE: this is in the world space!!
                 // o.normal = UnityObjectToWorldNormal(v.normal);
 				return o;
