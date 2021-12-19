@@ -1,0 +1,221 @@
+<html>
+
+<head>
+		<title>CSS551 Fall 2021: Final Projects</title>
+</head>
+	
+<h2><b>CSS551 Fall 2021: Advanced 3D Computer Graphics</font></b></h2>
+
+These are the final projects we build in the last two weeks of Fall Quarter 2021. 
+Students must investigate a modern 3D graphics technology and integrate into their project demonstrating functionality learned: Camera Manipulation, Scene Graph Composition,
+Object to World matrix computation and concatenation, 
+Collision with the hierarchy,
+GPU Shader.
+    
+<hr>
+
+<table border="1" width="100%" bordercolor="#404040">
+
+
+
+<!-- 1 -->
+<tr>
+  <td align="center" style="text-align:left;" width="122px">
+    <b>Developers</b></br >
+    Owen Camber<br />
+    Christian Rolph<br/>
+</td>
+<td>
+  
+  <! -- Description -->
+  <p><b><u>App Name: HoloLens Catapult</u></b></p> 
+  <p>This app is a mixed reality catapult game where the user can drive a remote controlled catapult around their room and fire projectiles at as many blocks as they can within a given time limit. Before the game begins, the virtual blocks will be placed in integrated physical areas around the room (for example one block on the arm of a chair and another on a physical bookshelf). Once the game begins, the player will get a fixed amount of time to destroy as many blocks as they can by launching projectiles from the catapult. The catapult will have three generations of scene nodes: the catapult base - allowing the player to drive (translate), the swing frame - allowing the player to rotate the catapult arm, and the catapult arm - allowing a user to set the angle at which to pull back on the arm (further pull is a longer throw). The user will be able to manipulate the catapult using a controller. Once fired, a second camera will follow the launched projectile, and the player will be able to see that camera’s view on a hand-sized display using a hand gesture. This second camera view will help the player better see the accuracy of their launched projectiles.</p>
+  </p>
+
+  <! -- Links to Project Artifacts -->
+  <p><a href="https://drive.google.com/file/d/1HNaOIubTjJmVoPaykNLfGLGblmGqTADQ/view?usp=sharing">Project Proposal</a> &nbsp &nbsp &nbsp
+    <a href="https://docs.google.com/presentation/d/1Bs13ZCYjC6IYyRuueLYDqnh8XLCcW6B9/edit?usp=sharing&ouid=109095287335489600803&rtpof=true&sd=true"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+    <a href="https://docs.google.com/presentation/d/102tV3OZ3J6hjNXn1K7F6fLTIgnH16ty9/edit?usp=sharing&ouid=109095287335489600803&rtpof=true&sd=true"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+    <a href="https://drive.google.com/file/d/1Prqcy0qmRG9C27-a6xEbRkUS--9MQ4fN/view?usp=sharing"> Final Demo Video</a> &nbsp &nbsp &nbsp
+    <a href="https://github.com/christianrolph/css551finalproject">Final Project Source</a> &nbsp &nbsp &nbsp
+    </p><br/>
+
+    <! -- Video and Screenshots -->
+    <iframe src="https://drive.google.com/file/d/1JEDpeLUlpsKLGL2yCbgRj20iGyVlPH-z/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+      <img border="0" src="./1.Christian+Owen/Screenshots/shot1.png" width="250px"/>
+      <img border="0" src="./1.Christian+Owen/Screenshots/shot2.png" width="250px"/>
+      <img border="0" src="./1.Christian+Owen/Screenshots/shot3.png" width="299px"/>
+      <p>Source for Sound: 
+        "Small Piece Of Glass Shattering A2" sound effect from <a href="https://www.fesliyanstudios.com/royalty-free-sound-effects-download/glass-shattering-and-breaking-124"> Fesliyan Studios </a></p>
+<br> 
+Results of initial tech investigations:
+<a href="https://docs.google.com/presentation/d/1cTbuH_7N8SjZXEfY_pv6esIWQn2-ZaY4/">Presentation</a> 
+    (a much more detailed <a href="https://www.youtube.com/watch?v=aN3FQs5MqIs">video here</a>)
+<br>
+<iframe src="https://www.youtube.com/embed/b6eIQqxMZ2M" width="560" height="315" data-mce-fragment="1"></iframe>
+	
+</td>
+</tr>
+
+
+<!-- 2 -->
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        Yiwei Tu<br />
+        Liwen Fan<br/>
+		Luyao Wang<br/>
+</td>
+<td>
+    <p><b><u>App Name: Bubble Painting Game</u></b></p> 
+   <p>The game where players can enjoy shooting bubbles into anything and coloring the world! It can help players to release stress from fast-paced work and study life.
+   </p>
+   <iframe src="https://drive.google.com/file/d/1gpTvtmZWA1Ci_BD_FbvVjwoM0X58gqnp/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   
+  <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_Collections.png" width="950px"  alt="Game Start Scene"/>
+ <!--
+<p>
+    <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_StartScene.png" width="200px"  alt="Game Start Scene"/>
+    <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_Overview.png" width="200px" alt="Game Overview"/>
+    <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_StrengthBar.png" width="200px" alt="Strength Bar"/>
+    <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_Xray_Hatch.png" width="200px" alt="X-Ray and Hatch shaders"/>
+    <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_DyingStarPart.png" width="400px" alt="Dying a flying start"/>
+    <img border="0" src="./2.Liwen+Luyao+Yiwei/Screenshots/BubblePainting_DyingGemW2Colors.png" width="400px" alt="Dying a gem with different colors"/>
+  </p>
+  -->
+<p>From Unity Asset Store: 
+		Sets - Gems,
+		Sherbbs Particle Collection,
+		Real Stars Skybox</p>
+  <p><a href="./2.Liwen+Luyao+Yiwei/Proposal.pdf">Project proposal</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1qxcu105r2iPI52kWQrAMjv71azxxDb3JrKAyxidlRaA/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1XuUvCessYbFDk3EoRYZ7OdjXKiAjqnTNe5BQ0NEa7BI/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           </p>
+           
+  Results of initial tech investigations:
+  <br>
+  
+  Tangible UI Control:
+  <a href="https://docs.google.com/presentation/d/1CBhifpGuLAcav4D7maz1XLfdb5z01Pj9/">Presentation</a> 
+  <br>
+  <iframe src="https://www.youtube.com/embed/mQKDecIWVr8" width="560" height="315" data-mce-fragment="1"></iframe>
+  <br>
+  
+  Hatch Shaders:
+  <a href="https://docs.google.com/presentation/d/10vfEx9MlbEGEybKO_1HJSJ1cIkWyvAli-kn-M8Owp50/">Presentation</a> 
+  <br>
+  <iframe src="https://drive.google.com/file/d/1hOcCs0ji-ww1eID3qTfeAuTJ-ilAZa4m/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+  <br>
+  
+  Multipass Shaders:
+  <a href="https://docs.google.com/presentation/d/1zSsAi0UmHkC6WqwfLjtJBRAbNDquvL4Zejh0hSvpOvs/">Presentation</a> 
+  <br>
+  <iframe src="https://drive.google.com/file/d/1shxx3mInURlp-Il5c_PqDiwUoHSEPrck/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+  <br>
+  </td>
+</tr>
+
+
+<!-- 3 -->
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        Arun Sarma<br />
+        Sana Suse<br/>
+</td>
+<td>
+    <p><b><u>App Name: ARCore Crane Game</u></b></p> 
+   <p>A game in which the user controls a crane to pick up presents that are scattered around the user's environment within a time limit.
+	The collectable objects that the user attempts to pick up with the crane move 
+	back and forth at random speeds; new presents are inserted into the scene every 2.5 seconds or after the crane picks up an object.
+	The user rotates the crane by tapping on each of its segments and dragging their
+	finger across the screen. The crane is scaled by doing a pinch-to-zoom gesture. The user sees what is in front of the crane's head via the second viewport which displays a camera
+	view outwards from
+	the crane's head. The crane's head also illuminates the presents via point lighting and the crane in general is lit via ARCore lighting estimation. Occlusion via ARCore Depth API
+	is included to acheive depth perception, and can be enabled or disabled by the user. 
+	At the end of the game, the user's score (number of collected items) is displayed, and the user can start over.
+   </p>
+   
+   <iframe src="https://drive.google.com/file/d/1lgPfJEk7fBEX4q6L_DIx_pmEV_zFvdm3/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   <img border="0" src="./3.Sana+Arun/screenshots/viewport.png" width="400px"/>
+   <img border="0" src="./3.Sana+Arun/screenshots/rotation.png" width="400px"/>
+   <img border="0" src="./3.Sana+Arun/screenshots/popup.png" width="400px"/>
+   <img border="0" src="./3.Sana+Arun/screenshots/occlusion.png" width="400px"/>
+   <img border="0" src="./3.Sana+Arun/screenshots/illumination.png" width="400px"/>
+<p>From Unity Asset Store: 
+		Christmas Tree - POLYCRAFT Series</p>
+  <p><a href="./3.Sana+Arun/Project_Proposal_ArunSarma_SanaSuse.pdf">Project proposal</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1QaNPr-Am3GrM64yqCe-taVUI68uZ-TfazVcIB8YdhU8/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1s_DM_07UKm5JuL1UhIPymFYb17kbywEOBLt8o8-Pu8k/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/file/d/1jqi0RMtkO_oT72Fo-ey3Co8gAOIe0NTO/view?usp=sharing"><b> Final Project APK</b></a> &nbsp &nbsp &nbsp
+           </p>
+  Results of initial tech investigations: AR on mobile phone with ARCore
+  <br>
+  
+  From Sana
+  <a href="https://docs.google.com/presentation/d/1h-biTZNQz_tdyhZoTQ1bn-aWHKeJeRFTSZc5qOKW8OM/">Presentation</a> 
+  <br>
+  <iframe src="https://drive.google.com/file/d/1SIE5m3lJXhh3l68zqjc7i384HV00JuBp/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+  <br>
+  
+  From Arun
+  <a href="https://docs.google.com/presentation/d/1XGkG7MdwkSxh8mOsFUm_F_xtCqBjsGjuQr7i-02bciA/">Presentation</a> 
+  <br>
+  <iframe src="https://www.youtube.com/embed/bEZYPPNB_3c" width="560" height="315" data-mce-fragment="1"></iframe>
+  <br>
+  </td>
+</tr>
+
+
+<!-- 4 -->
+  
+<tr>
+    <td align="center" style="text-align:left;">
+      <img border ="0" src="./4.Ray+Michael/screenshot/shot1.png" width="122px" /><br />
+    
+        <b>Developers</b></br >
+            Wen-Jui Cheng<br />
+            Michael Hartman<br />
+    </td>
+    <td>
+        <p><b><u>VR Crane Machine</u></b></p> 
+       <p>
+           Want to play a crane machine that doesn't drop your prizes? Then welcome to VR Crane Machine! Move the crane with the controller joystick,
+           try to grab a prize with the green button, and drop it into the prize pool with the red button! You can also walk around for a better view,
+           or see from the perspective of the crane!
+       </p>
+       <p>
+       <a href="https://drive.google.com/file/d/1D1QQEcMaSEpo3Dbdl5eBFYhL1W4lqqez/view?usp=sharing">Project Proposal</a> |
+       <a href="https://drive.google.com/drive/folders/18OGy2G3GkGAHmW8-yX3itfPZwfkdNwYa?usp=sharing">Project Source Code</a> | 
+       <a href="https://drive.google.com/file/d/1qant4rF5QD9770KOiDz43livUez2U013/view?usp=sharing">EXE File</a><br /><br />
+       
+       
+    <iframe src="https://drive.google.com/file/d/1IdGV7rZJd4kAVVZOm4CSH8RR6Un2hnGI/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+       <img border="0" src="./4.Ray+Michael/screenshot/shot1.png" width="250px"/>
+       <img border="0" src="./4.Ray+Michael/screenshot/shot2.png" width="250px"/>
+       <img border="0" src="./4.Ray+Michael/screenshot/shot3.png" width="250px"/>
+          </p>
+  Results of initial tech investigations: VR with Mixed Reality MR
+  <br>
+  
+  From Ray
+  <a href="https://docs.google.com/presentation/d/1KkGY5yLFURs6sejZH32TfvBUm8-8QSfgy5zidh-WU3Q/">Presentation</a> 
+  <br>
+    <iframe src="https://drive.google.com/file/d/1QSjhWoPFAslJdqHAaQquRzLKYYcpucmg/preview" width="560" height="315" data-mce-fragment="1"></iframe>  <br>
+      	
+  From Michael
+  <a href="https://docs.google.com/presentation/d/1SBVSZn_w7Q18crsNRT3RpiSSG09pWuY3-v2lFG0k4Po/">Presentation</a> 
+  <br>
+    <iframe src="https://drive.google.com/file/d/17alIjlcubDKubSn_28s8hDKcWWCsxbKM/preview" width="560" height="315" data-mce-fragment="1"></iframe>  <br>
+  
+    </td>
+    </tr>
+
+
+     
+</table>  
+</html>
