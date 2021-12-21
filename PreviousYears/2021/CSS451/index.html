@@ -1,0 +1,471 @@
+<html>
+
+<head>
+		<title>CSS451 Fall 2021: Final Projects</title>
+</head>
+	
+<h2><b>CSS451 Fall 2021: 3D Computer Graphics</font></b></h2>
+
+These are the final projects we build in the last two weeks of Fall Quarter 2021. 
+Mostly, students projects must replace some of the core Unity3D functionality  
+by our own implementations: Camera Manipulation, Scene Graph Composition,
+Object to World matrix computation and concatenation, 
+Collision with the hierarchy,
+GPU Shader.
+    
+<p>Please refer to each project posting on what additional installations are required to run the project. When available, you should be able to download, unzip, and double click on the .exe to run.</p>
+
+<hr>
+
+<table border="1" width="100%" bordercolor="#404040">
+
+
+<!-- 2 -->
+<tr>
+    
+        <td align="center" style="text-align:left;">
+        
+            <img border ="0" src="./2.Mitchell+Ethan/screenshot/logo.png" width="122px" /><br />
+        
+            <b>Developers</b></br >
+            
+            Mitchell Johnson<br />
+            
+            Ethan Mo<br /> 
+        </td>
+        
+        <td>       
+            <p><b><u>Archery Simulator</u></b></p>            
+            <p>A first-person archery simulation game with realistic physics. The player will be challenged to fire and hit the center of the targets. The overall accuracy will be calculated and displayed.</p>            
+            <p>      
+                <a href="./2.Mitchell+Ethan/Team 9 Final Project Proposal.pptx">Project proposal</a>
+</p>
+
+<iframe src="https://drive.google.com/file/d/1xtrkiRdR7IBK5Rt1G2d6Orvm9B4w7QOd/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+<!-- <br>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/ArcRes.gif" width="250px"/>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/ArrowCamera.gif" width="250px"/>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/Collision.gif" width="250px"/>
+<br>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/PlayerMovement.gif" width="250px"/>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/TargetMani.gif" width="250px"/>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/Score.gif" width="250px"/>
+!-->
+<br>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/Final.gif" width="250px"/>
+<img border="0" src="./2.Mitchell+Ethan/screenshot/screenshot1.jpg" width="250px"/>          
+<img border="0" src="./2.Mitchell+Ethan/screenshot/screenshot2.jpg" width="250px"/>          
+<img border="0" src="./2.Mitchell+Ethan/screenshot/screenshot3.jpg" width="250px"/>
+
+
+        </td>    
+    </tr>   
+
+<!-- 3 -->
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        Isabella Abad<br />
+        Daniel Kim<br/>
+</td>
+<td>
+    <p><b><u>App Name: Crane Tic-Tac-Toe</u></b></p> 
+   <p>A game where the users can control a fully functioning construction-style crane to play tic-tac-toe. Players will manipulate the crane to pick up different game pieces of O’s and X’s and place them in the game board of 3x3 placements. The players’ crane will be constructed of 3 generations of SceneNodes and NodePrimitives: main body, swinging arm, and hanging magnet. Players can use ‘WASD’ keys to translate the whole crane around, Comma and Period keys to rotate the swinging arm, and the Arrow keys to move the swinging arm and hanging magnet.
+     Each player will take turns controlling the crane and every time the magnet is deactivated, the turn will switch, and every time a player wins a round of tic-tac-toe, the game will reset and update the score.
+   </p>
+    <iframe src="https://drive.google.com/file/d/1_guFABHP6K52C-Ib0W8lDrx4Dseqogf6/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   <br>
+   <img border="0" src="./3.Isabella+Daniel/screenshots/shot1.jpg" width="250px"/>
+   <img border="0" src="./3.Isabella+Daniel/screenshots/shot2.jpg" width="250px"/>
+   <img border="0" src="./3.Isabella+Daniel/screenshots/shot3.jpg" width="250px"/>
+<p>From Unity Asset Store: 
+		Original Wooden Textures,
+		Wood_table_and_chair</p>
+  <p><a href="https://docs.google.com/presentation/d/1P0AZ-neEzzDd9blgWjGHBjvqaYTsbQz0-2XGxEiKoKg/edit?usp=sharing">Proposal Doc</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1XcPmAh2ktBX1e52rN-QHlWpPrqZSYac9-lMaict4iWg/edit?usp=sharing"> Crane Progress Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1NJeoton8F-CfnUx6bitRpXI8SkHHD-eVHRbM9Lg81Uw/edit?usp=sharing"> Crane Final Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/drive/folders/1Dd_gK-l1UQyUyyJKLCC3Lwlt_NekWb8q?usp=sharing"><b> Final Project EXE</b></a> &nbsp &nbsp &nbsp
+           </p><br/>
+  </td>
+</tr>
+
+<!-- 1 -->
+<tr>
+  <td>
+    <br />
+    <b>Developers</b></br>
+    Shaun Stangler<br />
+    William Susanto<br />
+  </td>
+  <td>
+    <p><b><u>App Name: AR Lidar / VR Hybrid Tech Demo</u></b></p>
+    <p>The AR Lidar / VR Hybrid Tech Demo showcases the ability to intercept, serialize, transport, deserialize, and
+      transform IOS ARKit Lidar world mesh data into a Unity VR gameworld.
+      The main Unity gameworld consist of a WMR VR enabled 3D playspace, where a user can teleport, move, and interact
+      with objects, as well as pick up a toy gun and
+      shoot a giant cactaur. The Lidar meshes are generated by an IOS device equipped with a Lidar camera. The mesh
+      control is handled by a separate Unity ARFoundation application where a user
+      can scan their play environment before or during their VR application usage. Network calls handled with a custom
+      WebAPI Azure Cloud Service to store and retrieve mesh data.
+      This demo allows VR users to experience real world, spacially correct boundaries and objects as a part of their
+      playspace.
+    </p>
+    <table>
+      <tr>
+        <td>
+          Long form demo video:
+        </td>
+        <td>
+          Short form demo video:
+        </td>
+      </tr>
+      <tr>
+        <td>
+           <iframe src="https://drive.google.com/file/d/1mCmlpiMbDxaaHT1zXrEkI1-ZR7stWLAO/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+        </td>
+        <td>
+        
+          <iframe src="https://drive.google.com/file/d/1JAJoIBypLVT62fSO2_S5UU_owS4gvHC0/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+        </td>
+      </tr>
+    </table>
+    <img border="0" src="./1.Shaun+William/screenshots/shot1.png" width="200px" />
+    <img border="0" src="./1.Shaun+William/screenshots/shot2.png" width="200px" />
+    <img border="0" src="./1.Shaun+William/screenshots/shot3.png" width="200px" />
+    <p>From Unity Asset Store:
+      VR Beginner Tutorial Pack: Bubble Gun
+      Asset Unlock: 2D Prototyping Pack: Ground Textures</p>
+    <p><a href="./1.Shaun+William/CSS 451 Final Proposal.docx.pdf">Project proposal</a> &nbsp &nbsp &nbsp
+      <a href="https://docs.google.com/presentation/d/1iL6EZ1tuR93ZtLzwhZ41yBVDD3mXFYSv/edit#slide=id.p1"> Progress Demo
+        Presentation</a> &nbsp &nbsp &nbsp
+      <a href="https://docs.google.com/presentation/d/15zSVnKJqmpdMncBMHf_yKoE8RpzadVvq/edit?rtpof=true"> Final Demo
+        Presentation</a> &nbsp &nbsp &nbsp
+      <a href="https://drive.google.com/file/d/11usbe5ambtbVUoZEwnhWDOgpjih913Vm/view?usp=sharing"><b> Final Project
+          EXE</b></a> &nbsp &nbsp &nbsp
+    </p><br />
+  </td>
+</tr>
+ 
+
+<!-- 4 -->
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        Edward Liao<br />
+        Preston Parsons<br/>
+</td>
+<td>
+    <p><b><u>App Name: Piano Cubes</u></b></p> 
+   <p>The Purpose of Piano Cubes is to make a game where a person can play piano to a song in a 3D space. Tiles fall and hit the piano when a note is played, and players can play along with the notes as they fall. Use the following keys to play the piano: S, E, D, R, F, J, I, K, O, L, P, semi-colon. Use caps-lock to switch between the left and right portions of the piano. Use LCtrl to switch the octaves the keys are in.
+   </p>
+   <iframe src="https://drive.google.com/file/d/1G_HLsDqxMVcV2cYYi9P4ddDGee-FjAwo/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   <br>
+   <img border="0" src="./4.Edward+Preston/screenshots/pianocubes1.png" width="250px"/>
+   <img border="0" src="./4.Edward+Preston/screenshots/pianocubes2.png" width="250px"/>
+   <img border="0" src="./4.Edward+Preston/screenshots/pianocubes3.png" width="250px"/>
+  <p><a href="https://docs.google.com/presentation/d/1qeuYmsZK69uvD_qyH-dftLIXEzzODc1spjavQHySC5M/edit?usp=sharing">Project proposal</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1o1fl52tJB8ovkH0yAmEkDZhxljrU-IqqxvlMU9GeqNw/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1jD0Sl4K4Rxi8-q5c5BDEAmGVfdYhQk9csKcK5dWoxgU/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://awesomeedl.github.io/451FinalDemo/"><b> Final Project WebGL</b></a> &nbsp &nbsp &nbsp
+           </p><br/>
+  </td>
+</tr>
+
+
+<!-- 5 -->
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        David Tkach<br />
+        Talon Martin<br/>
+</td>
+<td>
+    <p><b><u>App Name: Snowball Simulation</u></b></p> 
+   <p>We aimed to create a graphics simulation where the user can control (using the arrow keys) two rolling snowballs that 
+     grow in size as they travel. The user may also observe some predefined objects used to decorate the world such as a 
+     Snowman, a Campfire, or an Ice Patch. The Snowman is an object hierarchy (implemented with SceneNodes) that interacts 
+     with the snowballs in different ways.
+   </p>
+   
+    <iframe src="https://drive.google.com/file/d/1HTDTDvQ6HwgZEghtesCFEMylDnmWn2Lx/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   <br>
+   <img border="0" src="./5.David+Talon/screenshots/shot1.PNG" width="250px"/>
+   <img border="0" src="./5.David+Talon/screenshots/shot2.PNG" width="250px"/>
+   <img border="0" src="./5.David+Talon/screenshots/shot3.PNG" width="250px"/>
+<p>
+  Sources:
+  <a href="https://texture.ninja/category/Wood/2?texture=bark_7815.jpg">
+  Wood Texture</a>
+  &nbsp
+  
+  <a href="http://www.textures4photoshop.com/tex/ground-dirt-and-sand/free-frozen-snow-texture-seamless-and-tileable.aspx">Snow Texture</a>
+  &nbsp
+
+  <a href="https://www.filterforge.com/filters/4509.html">Snow Environment</a>
+  &nbsp
+  
+  <a href="https://www.filterforge.com/filters/13186.html">Falling Snowflake</a>
+  &nbsp
+    
+ <a href="https://assetstore.unity.com/packages/2d/textures-materials/realistic-snow-and-ice-materials-151129">Snow and Ice</a>
+  &nbsp
+ 
+<a href="https://assetstore.unity.com/packages/3d/props/exterior/campfire-38668">Campfire</a>
+  &nbsp
+ 
+  <br>
+  <strong>Carrot Texture</strong>: by Talon using a basic Paint program.
+
+</p>
+  <p><a href="./Project_Proposal.pdf">Project proposal</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1XeesEhi6SpzfNW0YRlOiEXsaUMczuwtR_UJPbWmKehE/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1XeesEhi6SpzfNW0YRlOiEXsaUMczuwtR_UJPbWmKehE/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/file/d/1LE6IfbkO-4lMY4YCmj5E40Xv9zroqzd-/view?usp=sharing"><b> Final Project EXE</b></a> &nbsp &nbsp &nbsp
+           </p><br>
+  </td>
+</tr>
+
+
+<!-- 6 -->
+
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        Grace Nelson<br />
+        Mason Honold<br/>
+	Ayrton Muniz<br/>
+</td>
+<td>
+    <p><b><u>App Name: Ballista Simulator</u></b></p> 
+   <p> 
+   Ballista Simulator is a two player application where you aim and fire ballistas at red targets to increase your score. 
+   To control a ballista you use your mouse, to pull back the arrow you hold space, and to fire you press left click.
+   You are unable to fire at blue targets as they are the other players targets. 
+   The targets will spawn randomly in front of both ballistas.
+   When you fire, a camera will follow the arrows to give you another perspective. 
+   </p>
+   
+    <iframe src="https://drive.google.com/file/d/1ZALlZn5oj5tU_tw4t2DH0rVJGXOjXPUT/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   <br>
+   <img border="0" src="./6.Mason+Ayrton+Grace/screenshots/Screenshot1.png" width="250px"/>
+   <img border="0" src="./6.Mason+Ayrton+Grace/screenshots/Screenshot2.png" width="250px"/>
+   <img border="0" src="./6.Mason+Ayrton+Grace/screenshots/Screenshot3.png" width="250px"/>
+
+  <p><a href="./6.Mason+Ayrton+Grace/Project_Proposal.pdf">Project proposal</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1lwFbRVAOn-WUB4D1e8tbCM4nbA2p9cOQ7-TswGyHEbI/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1WmLP3K6_tjEGDj6o4vKWI6pCRnRMpq414OsQQ2D1v54/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/file/d/12wwwrRrGHxyGIzd7NWBQoQ-I5LwzNhh0/view?usp=sharing"><b> Final Project EXE</b></a> &nbsp &nbsp &nbsp
+           </p><br/>
+  </td>
+</tr>
+
+<!-- 7 -->
+<tr>
+  <td>
+	<b>Developers</b><br>
+	Guiragos Guiragossian<br>
+	Dylan Thibault<br>
+	<br>
+  </td>
+  <td>
+	<h1 style="font-size: 1rem; text-decoration: underline;">Foosball Plus</h1>
+	<p>The "beautiful game" is finally digitally available! Foosball Plus is a fully-networked competitive experience which aims to recreate the classic table-tob game with slick controls and an engaging presentation. Score goals, unlock powerups, cheat if you must... all is possible in this foosball playground.
+	<p>
+	  <ul style="list-style-type: none; display: inline; padding: 0">
+		<li style="display: inline-block; padding: 0px 14px"><a href="https://garybg.github.io/FoosballPlus/ ">WebGL</a></li>
+		<li style="display: inline-block; padding: 0px 14px"><a href="https://docs.google.com/presentation/d/1_4wh5c_WjJ_CBEGgFQuTVx0bKIuWXwBjxBznL0CkvDA/edit?usp=sharing">Final Presentation</a></li>
+		<li style="display: inline-block; padding: 0px 14px"><a href="https://docs.google.com/document/d/1K5haSKfiicdNY_jXgJKdJSuHExxPPQLsexwTZjjVTrg/edit?usp=sharing">Design Document</a></li>
+	  </ul>
+	  <br>
+	  <iframe src="https://drive.google.com/file/d/1fTxc7tr1wVDdss3ZSTak9wIEo5j1a1Cp/preview" width="560" height="315" allow="autoplay"></iframe>
+	  <br>
+	  <img src="./7.Dylan+Guiragos/screenshots/gamestart.png" style="border: none; width: 250px">
+	  <img src="./7.Dylan+Guiragos/screenshots/mainmenu.png" style="border: none; width: 250px">
+	  <img src="./7.Dylan+Guiragos/screenshots/1.jpg" style="border: none; width: 250px">
+	  <img src="./7.Dylan+Guiragos/screenshots/2.jpg" style="border: none; width: 250px">
+	  <img src="./7.Dylan+Guiragos/screenshots/3.jpg " style="border: none; width: 250px">
+	</p>
+  </td>
+</tr>
+
+
+
+<!-- 8 -->
+<tr>
+  <td>
+    <br/>
+    <b>Developers</b>
+    </br>
+    Bill Pham<br/>
+    Nicholas Martin<br/>
+    Max Trinh<br/>
+  </td>
+  <td>
+      <p><b><u>App Name: Bumper Boats</u></b></p> 
+    <p>This application features player controlled boats that can move around and knock floating
+      balls into other boats. When a boat collides with a floating ball it will be knocked in the
+       direction opposite of the collision and can collide with 
+      other players’ boats. Players are in the third person perspective and are in a water filled
+      arena.
+    </p>
+    <iframe src="https://drive.google.com/file/d/11sYYMxA1rgwlgunvT3meS3zZdmmIa3e3/preview" width="560" height="315" allow="autoplay"></iframe>
+<br>
+    <img border="0" src="https://drive.google.com/uc?id=11pKORm0N2y32irLjsUO1Itw4mgkOdTyG" width="250px"/>
+    <img border="0" src="https://drive.google.com/uc?id=1JOtKH2RgRYt1DOEcmgkAxtVNFb36BIwm" width="250px"/>
+    <img border="0" src="https://drive.google.com/uc?id=1YADwmOKCKVmMS7-YB5rzbNv4r3NZTTea" width="250px"/>
+  <p>
+    <a href="https://drive.google.com/file/d/1bMGloxjYATT0A8MFqQgiV2HG7wF3tPfg/view?usp=sharing">Project proposal</a> &nbsp &nbsp &nbsp
+    <a href="https://docs.google.com/presentation/d/1m6soc-PelceLDryE_Encgn2r4uTW3xhW-buwx_Cia9A/edit?usp=sharing">Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+    <a href="https://docs.google.com/presentation/d/1KOI1Tzop8yRizRmTjnvpQjz-kODNyXw6WQuBI02ElXI/edit?usp=sharing">Final Demo Presentation</a> &nbsp &nbsp &nbsp
+    <a href="https://drive.google.com/file/d/1-xeCkKItBvjI3goMikFJvxUdFOiyTMlu/view?usp=sharing"><b>Final Project EXE</b></a> &nbsp &nbsp &nbsp
+  </p><br/>
+  </td>
+</tr>
+
+
+
+<!-- 9 -->
+<tr>
+<td>
+  <br />
+
+    <b>Developers</b></br >
+        Parth Nain<br />
+        Varun Nadarajah<br/>
+</td>
+<td>
+    <p><b><u>App Name: 3D Snake</u></b></p> 
+   <p>Our project is a 3D implementation of the classic Snake game. The player controls a constantly moving snake within a bordered plane, as it tries to pick up food while trying to avoid colliding with its own tail. The goal is to try to collect as many points as possible before colliding with either the tail, a wall, or other obstacles, at which point the game will end.
+   </p>
+   
+    <iframe src="https://drive.google.com/file/d/1aDW8wU56atuBJlqL6ogFxTuIBOZYpNO0/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+   <br>
+   <img border="0" src="./9.Parth+Varun/screenshots/shot1.png" width="250px"/>
+   <img border="0" src="./9.Parth+Varun/screenshots/shot2.png" width="250px"/>
+   <img border="0" src="./9.Parth+Varun/screenshots/shot3.png" width="250px"/>
+  <p>Asset Credits: 
+		Forest Floor Texture - Nexus Royalty Free, 
+		Unique Foliage - Jonathan Foust, 
+		Insect Texture - Open Game Art</p>
+  <p><a href="./9.Parth+Varun/ParthVarun451ProposalDoc.pdf">Project proposal</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1_rJ30Kz7Im8Sbx7qv9eYp-hAe3AVF-t46Wrn3i1ZoSE/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://docs.google.com/presentation/d/1L2TD6o8skKEmXnSxqQdPVxUv6riHfa-wcYR44LMUIpQ/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/drive/folders/1Xz4ZgXCirmb_KI3wT5vMRgBBhVOrutiq?usp=sharing"><b> Final Project EXE</b></a> &nbsp &nbsp &nbsp
+           </p><br/>
+  </td>
+</tr>
+
+
+
+<!-- 11 -->
+
+
+
+<!-- 12 -->
+<tr>
+			
+			<td align = "center" style = "text-align: left">
+				<b>Developers:</b><br/>
+				Hao Duong<br/>
+				Ryan Collins<br/>
+			</td>
+			<td>
+				
+				<p><b><u>Slapshot:</u></b></p>
+				
+				<p>The purpose of Slapshot is to allow at least one player to move and manipulate a
+virtual hockey player to lineup the perfect slap shot. The player will have to adjust the
+hockey player’s location, rotations of the legs, torso, and stick, and shot power in
+order to send the puck hurtling toward (and hopefully into) the goal net, avoiding
+moving obstacles that attempt to fumble the shot.</p>
+
+				<a href = "https://drive.google.com/file/d/1yATgjXJw1FS7VHDb5tIG8h59g0hwNqEp/view?usp=sharing">Project Proposal </a> &nbsp &nbsp &nbsp
+				<a href = "https://docs.google.com/presentation/d/1akucSbDSJtgVWCj-dK01bIiatQfmCAen9Jflb3oksaI/edit?usp=sharing">Final Demo Presentation</a> &nbsp &nbsp &nbsp
+				<a href = "https://drive.google.com/file/d/1kRsR9SSIwcZglFxi_OPdXHPClVIBASxI/view?usp=sharing">Project EXE</a>
+				<br>
+				<iframe src="https://drive.google.com/file/d/1rpIdBY0ta15OhmxDTqXlBYvealxIEJbv/preview" width="560" height="315" data-mce-fragment="1"></iframe>
+<br>
+				<img border = "0" src = "./12.Hao+Ryan/screenShot/Screenshot3.png" width = "250px">
+				<img border = "0" src = "./12.Hao+Ryan/screenShot/Screenshot1.png" width = "250px">
+				<img border = "0" src = "./12.Hao+Ryan/screenShot/Screenshot2.png" width = "250px">
+			</td>
+			
+		</tr>
+
+
+<!-- 13 -->
+<tr>
+                <td align="center" style="text-align:center;">
+                  <p></p>
+                  <b>Developers</b><br>
+                  Nathan Miller<br>
+                  Tyler Miller<br>
+                </td>
+                <td>
+                  <p><b><u>Big White Fish</u></b></p> 
+                  <p></p>
+                  <p>A game in which the user controls a fish swimming through the water dodging barrels.
+   		    The controls for the game is D and A for movement, SPACE for fish whip, UP and DOWN arrow keys for tail movement, LEFT and RIGHT arrow keys for fin movement. 
+   		    As the user is controlling the fish, they will come across ramps to do tricks off of and score points. While in the air
+   		    the user can do three tricks, the lowest scoring involves moving just the fin or the tail, the second highest is pressing the space bar in the air,
+   		    and the highest scoring trick is pressing the space bar and moving the tail or fin.
+                  </p>
+                  <p>
+                  <a href="https://docs.google.com/presentation/d/1o3nsbGzaeewNQd484jvbr35miCN65UkTG98F7BChO_0/edit?usp=sharing">Project Proposal</a>
+                  &nbsp; &nbsp; &nbsp; &nbsp;
+		  <a href="https://docs.google.com/presentation/d/1ndyJSJ0WqctGxgnUn_7a6TmTCI1KllYFb9FStSmk1MU/edit?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           	  <a href="https://docs.google.com/presentation/d/1PbCO0tmDtLykUNwaHcYghVzrk59UPjSai41XOa2JHcA/edit?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+                  <a href="https://funkeymonkey10.github.io/BigWhiteFish/">Game EXE</a><br>
+                  </p><p></p>
+		  <iframe width="560" height="315" src="https://drive.google.com/file/d/1JIMY1_1qrBbhpRzKUvIWvA8rh3e7U2nc/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+               
+                  <br>
+                  <img border="0" src="https://drive.google.com/uc?export=view&id=1W7cKqYNduzElnAI8AL41hBbiyW9L6fuP" width="250px">
+                  <img border="0" src="https://drive.google.com/uc?export=view&id=1uv6mkNoi49jMKpecwnSwzp0uoW95kj7S" width="250px">
+                  <img border="0" src="https://drive.google.com/uc?export=view&id=1AnHLeIhLJRMzTJi21DzZEGIPC2tqI-Nl" width="250px">         
+                  <!-- <img border="0" src="" width="300px"> -->
+                </td>
+              </tr>
+
+<!-- 10 -->
+
+<tr>
+<td>
+  <br />
+
+    <b>Developer</b></br >
+        Rees Anderson<br />
+</td>
+<td>
+    <p><b><u>App Name: Solar System Simulator 2021</u></b></p> 
+   <p>This application is a scale version of our solar system with accurate sun, planet, and moon sizes, distances, orbits, and rotations. 
+Users can view planets and moons up close, compare sizes and distances, and watch the movements of the planets and their moons with a modifiable time scale. 
+Users can also travel from planet to planet reading accurate information and facts about each. 
+And if they're feeling up to it, they can take control of a "Terraforming Scout Rocket" and explore (and terraform) the solar system without boundaries!
+   </p>
+   <img border="0" src="./10.Rees/Screenshots/SunAndPlanets.png" width="250px"/>
+   <img border="0" src="./10.Rees/Screenshots/Earth.png" width="250px"/>
+   <img border="0" src="./10.Rees/Screenshots/TerraformedMars.png" width="250px"/>
+   <img border="0" src="./10.Rees/Screenshots/JovianSystem.png" width="250px"/>
+   <img border="0" src="./10.Rees/Screenshots/Europa.png" width="250px"/>
+<p>Sun, planet, and moon text, information, and textures are from NASA.</p>
+  <p><a href="https://drive.google.com/file/d/1XsZ5IvPyPjwD2ech8xaQg-aPJLiMK5jL/view?usp=sharing">Project Proposal Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/file/d/1jas0yZWudR5viUAkbiKurFmEaU32uxMf/view?usp=sharing"> Progress Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/file/d/1dWVZ6TnwZaQAOw0qCP7efgPUD0L_dIjT/view?usp=sharing"> Final Demo Presentation</a> &nbsp &nbsp &nbsp
+           <a href="https://drive.google.com/file/d/1LBecQR35AsuwemXpqmMShMoS414eThdj/view?usp=sharing"><b> Final Project EXE</b></a> &nbsp &nbsp &nbsp
+           </p><br/>
+  </td>
+</tr>
+<!-- 14 -->
+
+  
+</table>  
+</html>
