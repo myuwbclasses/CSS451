@@ -173,7 +173,7 @@ for the source code.</p>
 <ul>
 	<li>Select the <strong>CubeHasMoveComponent </strong>from the Hierarchy and examine its components in the Inspector</li>
 	<li>Click on DeleteCube'sMove, what happened?</li>
-	<li>Click on CreateCuve + MoveInX, what happens? What happens when you click on this multiple times?</li>
+	<li>Click on CreateCube + MoveInX, what happens? What happens when you click on this multiple times?</li>
 	<li>Click on DeleteCube, and click on CreateCube again, what happens now? (A new Cube is created)</li>
 </ul>
 </li>
@@ -185,7 +185,7 @@ for the source code.</p>
 <li><strong>Second point to note:&nbsp;</strong>components can be referenced by variables&nbsp; and create/delete dynamically at run time.
 <ul>
 	<li>Notice: both GameObject and "C# Scripts" can be created and deleted during run time.</li>
-	<li>The action of "draggin" a script onto a GameObject to associate the defined behavior with the object, actually:
+	<li>The action of "dragging" a script onto a GameObject to associate the defined behavior with the object, actually:
 		<ul>
 			<li>Create a new instance of the script object (e.g., MoveInX)</li>
 			<li>Create a reference from the GameObject to the new script (e.g., the MoveInX object.)</li>
@@ -210,7 +210,7 @@ for the source code.</p>
 </li>
 <li>MainController::Update()
 <ul>
-<li>Must call LMBSelect()!!<br /><br /></li>
+<li>Must call ProcessMouseEvents()!!<br /><br /></li>
 </ul>
 </li>
 </ul>
