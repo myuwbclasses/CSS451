@@ -5,7 +5,7 @@ using UnityEngine;
 public class BounceUpAndDown: MonoBehaviour {
 
     public float yRange = 10f;
-    private float fDelta = 0.1f;
+    private float fDelta = 0.05f;
 
 	// Use this for initialization
 	void Start () {

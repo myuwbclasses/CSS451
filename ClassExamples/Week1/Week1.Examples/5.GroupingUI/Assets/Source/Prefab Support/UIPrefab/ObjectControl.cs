@@ -36,7 +36,7 @@ public class ObjectControl : MonoBehaviour
         }
         gameObject.SetActive(true);
         mObjectToControl = g;
-        mObjectSizeSlider.value = g.transform.localScale.x; // assume the xyz are the same.
+        // mObjectSizeSlider.value = g.transform.localScale.x; // assume the xyz are the same.
         mUILabel.text = g.name;
         SetSelectedColor(0f);
     }
