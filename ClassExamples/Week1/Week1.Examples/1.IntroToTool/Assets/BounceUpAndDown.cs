@@ -7,6 +7,8 @@ public class BounceUpAndDown: MonoBehaviour {
     public float yRange = 10f;
     private float fDelta = 0.1f;
 
+    public bool shouldBounce = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,6 +16,8 @@ public class BounceUpAndDown: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!shouldBounce) 
+            return;
         Vector3 p = transform.position;
         p.y += fDelta;
         if (Mathf.Abs(p.y) > yRange)
@@ -41,4 +45,8 @@ public class BounceUpAndDown: MonoBehaviour {
         }
         transform.position = p;
 	}
+
+    public void toggleBounce() {
+        shouldBounce = !shouldBounce;
+    }
 }
