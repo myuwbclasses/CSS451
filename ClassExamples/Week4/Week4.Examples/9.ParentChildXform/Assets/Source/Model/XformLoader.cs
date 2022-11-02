@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// VERY expensive!!
+// [ExecuteInEditMode]
 public class XformLoader : MonoBehaviour {
 
     public Color Color = Vector4.one;
@@ -49,6 +51,9 @@ public class XformLoader : MonoBehaviour {
 
         DrawPivot.localPosition = pivotPosition;
         DrawPivot.localRotation = transform.localRotation;
+                //  Note: this rotation is wrong, we are not considering the parent's rotation here!
+                //        the matrix operator P: contains parent rotation information, but
+                //        at this point we don't know how to get at it (we will learn about this soon)
 
         mMaterial.SetMatrix("MyXformMat", m);
             // "MyXformMat" must be exactly the same string as what is defined in the shader of the material
