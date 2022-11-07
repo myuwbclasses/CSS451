@@ -14,28 +14,29 @@ xmlns="http://www.w3.org/TR/REC-html40">
  <o:DocumentProperties>
   <o:Author>Kelvin Sung</o:Author>
   <o:LastAuthor>Kelvin Sung</o:LastAuthor>
-  <o:Revision>6</o:Revision>
-  <o:TotalTime>3923</o:TotalTime>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>3924</o:TotalTime>
   <o:Created>2018-11-05T06:11:00Z</o:Created>
-  <o:LastSaved>2021-12-01T22:13:00Z</o:LastSaved>
+  <o:LastSaved>2022-11-07T03:51:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>921</o:Words>
-  <o:Characters>5256</o:Characters>
+  <o:Words>597</o:Words>
+  <o:Characters>3405</o:Characters>
   <o:Company>UWB</o:Company>
-  <o:Lines>43</o:Lines>
-  <o:Paragraphs>12</o:Paragraphs>
-  <o:CharactersWithSpaces>6165</o:CharactersWithSpaces>
+  <o:Lines>28</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3995</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
   <o:AllowPNG/>
+  <o:PixelsPerInch>120</o:PixelsPerInch>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
 <link rel=themeData href="week9_files/themedata.thmx">
 <link rel=colorSchemeMapping href="week9_files/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
-  <w:Zoom>320</w:Zoom>
+  <w:Zoom>260</w:Zoom>
   <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
@@ -287,6 +288,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="HTML Variable"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="annotation subject"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="No List"/>
@@ -373,9 +376,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Subtle 1"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Web 1"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Balloon Text"/>
   <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
@@ -1062,8 +1069,7 @@ ul
 <div class=WordSection1>
 
 <p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><b
-style='mso-bidi-font-weight:normal'>Week 9: </b>Mouse click position and
-Shaders: </p>
+style='mso-bidi-font-weight:normal'>Week 9: </b>Transparency and Illumination</p>
 
 <p class=MsoListParagraphCxSpFirst style='text-align:justify;text-justify:inter-ideograph;
 text-indent:-.25in;mso-list:l0 level1 lfo2'><![if !supportLists]><span
@@ -1087,317 +1093,6 @@ inter-ideograph'><o:p>&nbsp;</o:p></p>
 style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Drawing the camera frustum: in order to see the mouse
-click position well, we need to see the frustum of the camera!</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Scene: View + World</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>View: two cameras, each with manipulation</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Rectangle class</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Simple (?) four sides of a rectangle in 3D space</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>CameraManipulation</span>::<span
-class=SpellE>MouseInCameraViewport</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>make sure mouse is in viewport before allow
-manipulation of camera</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Here, we use <span class=SpellE>ScreenToViewportPoint</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>CameraManipulation_DrawFrustum</span>::<span
-class=SpellE>UpdateFrustumPosition</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>What are we computing here?</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Run the project and adjust</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>FOV or <span class=SpellE>NearPlane</span> to
-see that drawn frustum can potentially block the small view camera</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Oh yes, we can switch on the Main Camera draw
-frustum as well, cool?</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto'><o:p>&nbsp;</o:p></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Showing the mouse click positions … </p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>NOTE: on the <a
-href="https://docs.unity3d.com/ScriptReference/Camera.html">Camera</a>, there
-are many functions for points in different coordinate system!</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>forward transform: from world to screen</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>WorldToViewportPoint</span>
-(viewport is between 0 to 1 for each camera)</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>WorldToScreenPoint</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>ViewportToScreenPoint</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Inversed transform: from screen back to world</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>ScreenToViewportPoint</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>ScreenToWorldPoint</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>ViewportToWorldPoint</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>CameraManipulation_Xform</span>::<span
-class=SpellE>MyScreenToViewport</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>This is a simple percentage computation!</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Notice we call our own function in <span
-class=SpellE><span class=GramE>MouseInCameraViewport</span></span><span
-class=GramE>(</span>) and print out the computed values, we are right on!</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>CameraManipulation_Xform</span>::<span
-class=SpellE>MyScreenToWorldPoints</span>()</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Note, we use the <span class=SpellE>nearPlane’s</span>
-corner and size to compute the click position on the <span class=SpellE>nearPlane</span></p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l2 level2 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>To run</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Left-Control click, notice, we click on a
-position, but in 3D, this is all positions along the “view ray”</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Note, since by default <span class=SpellE>MainCamera’s</span>
-Frustum is not computed, Left-Control click on the large view does not do
-anything!!</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto'><o:p>&nbsp;</o:p></p>
-
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l1 level1 lfo6'><![if !supportLists]><span
-style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-family:Wingdings;mso-ascii-font-family:
-Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
-mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
-Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>How
-to ray cast to select a scene node primitive? … Answer: perform all operations
-in World Coordinate (WC).</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l1 level2 lfo6'><![if !supportLists]><span
-style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
-style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-family:Wingdings;mso-ascii-font-family:
-Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
-mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
-Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>We
-know how to transform <span class=SpellE>SceneNode</span> primitive position
-into WC (MP4, small view camera position!)</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l1 level3 lfo6'><![if !supportLists]><span
-style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
-Wingdings'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
-</span></span></span><![endif]><span style='font-family:Wingdings;mso-ascii-font-family:
-Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
-mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
-Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>
-Compute <span class=SpellE>PrimitivePosWC</span> (scene node primitive position
-in WC)</p>
-
-<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
-auto;text-indent:-.25in;mso-list:l1 level2 lfo6'><![if !supportLists]><span
-style='font-family:"Courier New";mso-fareast-font-family:"Courier New"'><span
-style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-family:Wingdings;mso-ascii-font-family:
-Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
-mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
-Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>Above
-says, we know how to cast rays and intersect in WC!</p>
-
-<p class=MsoListParagraphCxSpLast style='margin-left:1.5in;mso-add-space:auto;
-text-indent:-.25in;mso-list:l1 level3 lfo6'><![if !supportLists]><span
-style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
-Wingdings'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
-</span></span></span><![endif]>Cast rays and intersect with a sphere around <span
-class=SpellE>PrimitivePosWC</span></p>
-
-<p class=MsoNormal><span style='mso-tab-count:1'>                </span></p>
-
-<p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal><span style='font-family:Wingdings;mso-ascii-font-family:
-Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
-mso-hansi-theme-font:minor-latin;mso-char-type:symbol;mso-symbol-font-family:
-Wingdings'><span style='mso-char-type:symbol;mso-symbol-font-family:Wingdings'>è</span></span>
-Back to continuation from last week’s example 6 … let’s try out transparency …</p>
-
-<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l2 level1 lfo4'><![if !supportLists]><span
-style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>Alpha, Mask, and Transparency</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
@@ -1467,8 +1162,8 @@ style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&
 style='font-family:Wingdings;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
 minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
 mso-char-type:symbol;mso-symbol-font-family:Wingdings'><span style='mso-char-type:
-symbol;mso-symbol-font-family:Wingdings'>ß</span></span> determines if a pixel is
-completely covered based on alpha value</p>
+symbol;mso-symbol-font-family:Wingdings'>ß</span></span> determines if a pixel
+is completely covered based on alpha value</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
 auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
@@ -1545,7 +1240,7 @@ and scaled accordingly</p>
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo4'><![if !supportLists]><span
 style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>Diffuse illumination:</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;mso-add-space:
@@ -1735,7 +1430,7 @@ line-break'>
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo4'><![if !supportLists]><span
 style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
-style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE>PointLight</span>: modeling a
 light bulb …</p>
 
@@ -1868,8 +1563,8 @@ style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE>LoadLight</span>: defines Update()
-that calls the PointLight’s loadlight, </p>
+</span></span></span><![endif]><span class=SpellE>LoadLight</span>: defines
+Update() that calls the PointLight’s loadlight, </p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:2.0in;mso-add-space:
 auto;text-indent:-.25in;mso-list:l2 level4 lfo4'><![if !supportLists]><span
@@ -1891,8 +1586,7 @@ style='mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Note the <span class=SpellE>vertexWC</span> in
-v2f</p>
+</span></span></span><![endif]>Note the <span class=SpellE>vertexWC</span> in v2f</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:1.5in;mso-add-space:
 auto;text-indent:-1.5in;mso-text-indent-alt:-9.0pt;mso-list:l2 level3 lfo4'><![if !supportLists]><span
