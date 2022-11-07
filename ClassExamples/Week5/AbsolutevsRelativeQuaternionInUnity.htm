@@ -11,13 +11,18 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=Originator content="Microsoft Word 15">
 <link rel=File-List
 href="AbsolutevsRelativeQuaternionInUnity_files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:PixelsPerInch>120</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
 <link rel=themeData
 href="AbsolutevsRelativeQuaternionInUnity_files/themedata.thmx">
 <link rel=colorSchemeMapping
 href="AbsolutevsRelativeQuaternionInUnity_files/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
-  <w:Zoom>150</w:Zoom>
+  <w:Zoom>260</w:Zoom>
   <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
@@ -259,6 +264,8 @@ href="AbsolutevsRelativeQuaternionInUnity_files/colorschememapping.xml">
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="HTML Variable"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="annotation subject"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="No List"/>
@@ -345,9 +352,13 @@ href="AbsolutevsRelativeQuaternionInUnity_files/colorschememapping.xml">
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Subtle 1"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Web 1"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Balloon Text"/>
   <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
@@ -638,14 +649,14 @@ href="AbsolutevsRelativeQuaternionInUnity_files/colorschememapping.xml">
 	mso-font-charset:0;
 	mso-generic-font-family:roman;
 	mso-font-pitch:variable;
-	mso-font-signature:3 0 0 0 1 0;}
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;
 	mso-font-charset:0;
 	mso-generic-font-family:swiss;
 	mso-font-pitch:variable;
-	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+	mso-font-signature:-469750017 -1073732485 9 0 511 0;}
 @font-face
 	{font-family:Consolas;
 	panose-1:2 11 6 9 2 2 4 3 2 4;
@@ -894,9 +905,9 @@ Relative Quaternion</u></b>:</p>
 
 <p class=MsoListParagraph style='margin-left:0in'>In the case of Unity, the key
 is to remember that Unity cylinder is defined such that the vertical direction
-is the y-axis. This means, if we want to rotate a cylinder, we must always
-construct the rotate operator with respect to the Vector3.up. &nbsp;OK, here
-comes the details.</p>
+is the y-axis. This means, if we want to rotate a cylinder, we must always construct
+the rotate operator with respect to the Vector3.up. &nbsp;OK, here comes the
+details.</p>
 
 <p class=MsoListParagraph style='margin-left:0in'><o:p>&nbsp;</o:p></p>
 
@@ -904,14 +915,14 @@ comes the details.</p>
 vector <span class=SpellE><span class=GramE><span style='font-family:Consolas;
 color:#00B050'>myCylinder.transform.up</span></span></span>, is the transform’s
 rotation from the <span style='font-family:Consolas;color:#00B050'>Vector3.up</span>.
-So, the following is always true:<o:p></o:p></p>
+So, the following is always true:</p>
 
 <p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
 class=SpellE><span class=GramE><span style='font-family:Consolas;color:#00B050'>myCylinder.transform.up</span></span></span><span
 style='font-family:Consolas;color:#00B050'> <o:p></o:p></span></p>
 
 <p class=MsoNormal style='text-indent:.5in'><span class=GramE>is &nbsp;the</span>
-same as <o:p></o:p></p>
+same as </p>
 
 <p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
 class=SpellE><span class=GramE><span style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotation</span></span></span><span
@@ -926,7 +937,7 @@ class=SpellE><span style='font-family:Consolas;color:#00B050'>newDir</span></spa
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level2 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>I can do<span style='font-family:Consolas;
 color:#00B050'>:</span></p>
 
@@ -939,22 +950,24 @@ Consolas;color:#00B050'>Vector3 Axis = Vector3.Cross(v1, <span class=SpellE>newD
 // <span class=SpellE>newDir</span> is the target direction</span></p>
 
 <p class=MsoListParagraph style='margin-left:1.0in'><span style='font-family:
-Consolas;color:#00B050'>float theta = <span class=SpellE><span class=GramE>Mathf</span></span><span
-class=GramE>(</span>Vector3.Dot(v1, <span class=SpellE>newDir</span>)) *
-MathfRad2Deg;</span></p>
+Consolas;color:#00B050'>float theta = <span class=SpellE>Mathf.Acos</span>(Vector3.Dot(v1,
+<span class=SpellE>newDir</span>)) * MathfRad2Deg;</span></p>
 
 <p class=MsoListParagraph style='text-indent:.5in'><span class=SpellE><span
 style='font-family:Consolas;color:#00B050'>newRotaiton</span></span><span
 style='font-family:Consolas;color:#00B050'> = q = <span class=SpellE>Quaternion.AngleAxis</span>(<span
-class=SpellE>thata</span>, Axis<span class=GramE>);<span
-style='mso-spacerun:yes'>  </span>/</span>/ this is the same as <span
-class=SpellE>FromToRotation</span>(Vector3.up, <span class=SpellE>newDir</span>)<o:p></o:p></span></p>
+class=SpellE>thata</span>, Axis);<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='text-indent:.5in'><span style='font-family:
+Consolas;color:#00B050'><span style='mso-spacerun:yes'>      </span>// this is
+the same as <span class=SpellE><span class=GramE>FromToRotation</span></span><span
+class=GramE>(</span>Vector3.up, <span class=SpellE>newDir</span>)<o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:.5in'><o:p>&nbsp;</o:p></p>
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level2 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>Since <span style='font-family:Consolas;
 color:#00B050'>q</span> is an operator, we are really saying the operator <span
 style='font-family:Consolas;color:#00B050'>q</span> will rotate <b>from </b>a
@@ -978,7 +991,7 @@ style='font-family:Consolas;color:#00B050'> <span class=SpellE>newDir</span></sp
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level2 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><b style='mso-bidi-font-weight:normal'>Equation
 A: </b>Since the default cylinder vertical direction is defined as <span
 style='font-family:Consolas;color:#00B050'>Vector3.up</span><span
@@ -1006,7 +1019,7 @@ direction, </p>
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level2 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>I can do<span style='font-family:Consolas;
 color:#00B050'>:</span></p>
 
@@ -1019,9 +1032,8 @@ Consolas;color:#00B050'>Vector3 Axis = Vector3.Cross(v1, <span class=SpellE>newD
 // <span class=SpellE>newDir</span> is the target direction</span></p>
 
 <p class=MsoListParagraph style='margin-left:1.0in'><span style='font-family:
-Consolas;color:#00B050'>float theta = <span class=SpellE><span class=GramE>Mathf</span></span><span
-class=GramE>(</span>Vector3.Dot(v1, <span class=SpellE>newDir</span>)) *
-MathfRad2Deg;</span></p>
+Consolas;color:#00B050'>float theta = <span class=SpellE>Mathf.Acos</span>(Vector3.Dot(v1,
+<span class=SpellE>newDir</span>)) * MathfRad2Deg;</span></p>
 
 <p class=MsoListParagraph style='text-indent:.5in'><span class=SpellE><span
 style='font-family:Consolas;color:#00B050'>newRotaiton</span></span><span
@@ -1034,10 +1046,10 @@ style='mso-spacerun:yes'>  </span>/</span>/ Or, <span class=SpellE>FromToRotatio
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level2 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>In this case the <span style='font-family:Consolas;
 color:#00B050'>q1</span> operator rotates <b>from </b><span class=SpellE><span
-class=GramE><span style='font-family:Consolas;color:#00B050'>myCylinder.transform.up</span></span></span>
+class=GramE><span style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotation</span></span></span>
 <b>to </b>the new <span class=SpellE><span style='font-family:Consolas;
 color:#00B050'>newDir</span></span>, or, we are constructing the rotation <span
 style='font-family:Consolas;color:#00B050'>q1 </span>such that:</p>
@@ -1045,7 +1057,7 @@ style='font-family:Consolas;color:#00B050'>q1 </span>such that:</p>
 <p class=MsoListParagraph style='margin-left:1.0in'><span class=SpellE><span
 style='font-family:Consolas;color:#00B050'>dir</span></span><span
 style='font-family:Consolas;color:#00B050'> = q1 * <span class=SpellE><span
-class=GramE>myCylinder.transform.up</span></span>;&nbsp; <o:p></o:p></span></p>
+class=GramE>myCylinder.transform.localRotation</span></span>;&nbsp; <o:p></o:p></span></p>
 
 <p class=MsoNormal style='text-indent:.5in'>And the operator <span
 style='font-family:Consolas;color:#00B050'>q1</span> will ensure <span
@@ -1057,16 +1069,15 @@ style='font-family:Consolas;color:#00B050'> <span class=SpellE>newDir</span></sp
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l1 level2 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><b><span style='font-family:Consolas;color:black'>Equation-B:
 </span></b>In this case, the <span style='font-family:Consolas;color:#00B050'>q1</span>
 operator rotates from current <span class=SpellE><span class=GramE><span
-style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotate</span></span></span></p>
+style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotation</span></span></span></p>
 
 <p class=MsoListParagraph style='text-indent:.5in'><span class=SpellE><span
 class=GramE><span style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotation</span></span></span><span
-style='font-family:Consolas;color:#00B050'> = <span class=SpellE>myCylinder.transform.localRotation</span>
-* q1<o:p></o:p></span></p>
+style='font-family:Consolas;color:#00B050'> = q1 * <span class=SpellE>myCylinder.transform.localRotation</span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph><o:p>&nbsp;</o:p></p>
 
@@ -1083,7 +1094,7 @@ says:</p>
 
 <p class=MsoNormal><span style='font-family:Consolas;color:#00B050'><span
 style='mso-tab-count:1'>      </span><span class=SpellE>newDir</span> = q1 * <span
-class=SpellE><span class=GramE>myCylinder.transform.up</span></span><o:p></o:p></span></p>
+class=SpellE><span class=GramE>myCylinder.transform.localRotation</span></span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-family:Consolas;color:#00B050'><span
 style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
@@ -1097,7 +1108,7 @@ class=SpellE><span style='font-family:Consolas;color:#00B050'>newDir</span></spa
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo4'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-family:Consolas;color:#00B050'>q</span><span
 style='color:#00B050'> </span><span class=GramE>rotate</span> from <span
 style='font-family:Consolas;color:#00B050'>Vector3.up </span>to <span
@@ -1115,10 +1126,10 @@ style='font-family:Consolas;color:#00B050'> = q;<o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-.25in;mso-list:l0 level1 lfo4'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-family:Consolas;color:#00B050'>q1</span><span
 style='color:#00B050'> </span>rotate from <span class=SpellE><span class=GramE><span
-style='font-family:Consolas;color:#00B050'>myCylinder.transform.up</span></span></span><span
+style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotation</span></span></span><span
 style='font-family:Consolas;color:#00B050'> </span>to <span class=SpellE><span
 style='font-family:Consolas;color:#00B050'>newDir</span></span>. We use this <span
 class=GramE>by<span style='mso-spacerun:yes'>  </span>[</span>relative rotation
@@ -1130,11 +1141,6 @@ mso-fareast-font-family:"Courier New";color:#00B050'><span style='mso-list:
 Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
 class=SpellE><span style='font-family:Consolas;color:#00B050'>myCylinder.transform.localRotation</span></span><span
 style='font-family:Consolas;color:#00B050'> = q1 * <span class=SpellE>myCylinder.transform.localRotation</span>;<o:p></o:p></span></p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=MsoNormal>If nothing else, make sure you understand the very last two
-bullet point when working on the <span class=SpellE>AimLine</span> in MP3.</p>
 
 </div>
 
