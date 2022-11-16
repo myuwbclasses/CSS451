@@ -41,7 +41,8 @@
 			{
 				v2f o;
 				o.vertex = mul(MyXformMat, v.vertex);  // Object to Wolrd (From SceneNode + Primitive/GameObject)
-                o.vertex = mul(UNITY_MATRIX_V, o.vertex);  // From Camera's View: World to View transform
+                // o.vertex = mul(UNITY_MATRIX_V, o.vertex);  // From Camera's View: World to View transform
+				o.vertex = mul(CameraViewMatrix, o.vertex);  // From Camera's View: World to View transform
                 o.vertex = mul(UNITY_MATRIX_P, o.vertex);    // From Camera's FOV+N+F: View to Perspective
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				return o;
@@ -52,45 +53,6 @@
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
 				return fixed4(1.0, 0.0, 0.0, 1.0); // col * (1.0 - MyColor.a) + (MyColor * MyColor.a);
-			}
-			ENDCG
-		}
-
-		// Second pass draw in Eye Space
-		Pass
-		{
-			CGPROGRAM
-			#pragma vertex MyVert1
-			#pragma fragment MyFrag1
-			// make fog work
-			#pragma multi_compile_fog
-			
-			#include "UnityCG.cginc"
-
-			struct appdata
-			{
-				float4 vertex : POSITION;
-			};
-
-			struct v2f
-			{
-				float4 vertex : SV_POSITION;
-			};
-
-            			
-			v2f MyVert1 (appdata v)
-			{
-				v2f o;
-				o.vertex = mul(UNITY_MATRIX_M, v.vertex);  // Object to Wolrd (From SceneNode + Primitive/GameObject)
-                o.vertex = mul(UNITY_MATRIX_V, o.vertex);  // From Camera's View: World to View transform
-                // o.vertex = mul(UNITY_MATRIX_P, o.vertex);    // From Camera's FOV+N+F: View to Perspective
-				return o;
-			}
-			
-			fixed4 MyFrag1 (v2f i) : SV_Target
-			{
-				// sample the texture
-				return fixed4(1, 1, 1, 1); // col * (1.0 - MyColor.a) + (MyColor * MyColor.a);
 			}
 			ENDCG
 		}
