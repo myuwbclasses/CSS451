@@ -32,6 +32,7 @@ public class ATriangle : MonoBehaviour {
 
         theMesh.vertices = v; //  new Vector3[3];
         theMesh.triangles = t; //  new int[3];
+        theMesh.normals = null;
 
 
         /*
