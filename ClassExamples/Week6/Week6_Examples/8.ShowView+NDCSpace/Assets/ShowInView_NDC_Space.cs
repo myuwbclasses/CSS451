@@ -11,6 +11,8 @@ public class ShowInView_NDC_Space : MonoBehaviour
     bool ShowNDCSpace = false;
     public Camera mTheView = null;
 
+    private GameObject mEyeSpaceRoot = null;
+
     GameObject[] mTheList;
     Mesh[]  mOrgMesh;
 
@@ -21,12 +23,14 @@ public class ShowInView_NDC_Space : MonoBehaviour
         mTheList = new GameObject[transform.childCount];
         mOrgMesh = new Mesh[transform.childCount];
 
+        mEyeSpaceRoot = new GameObject();
         for (int i = 0; i<transform.childCount; i++) {
             mOrgMesh[i] = Instantiate(transform.GetChild(i).GetComponent<MeshFilter>().mesh);
             mTheList[i] = Instantiate(transform.GetChild(i).gameObject);
             mTheList[i].transform.localPosition = Vector3.zero;
             mTheList[i].transform.localScale = Vector3.one;
             mTheList[i].transform.localRotation = Quaternion.identity;
+            mTheList[i].transform.SetParent(mEyeSpaceRoot.transform);
         }
     }
 
@@ -57,7 +61,7 @@ public class ShowInView_NDC_Space : MonoBehaviour
                 m = mTheView.projectionMatrix * m;
             } 
             transformMesh(ref m, i);
-        }
+        }                 
     }
 
     void transformMesh(ref Matrix4x4 m, int meshIndex) {
