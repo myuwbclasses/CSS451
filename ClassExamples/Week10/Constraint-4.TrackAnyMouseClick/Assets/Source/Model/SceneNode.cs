@@ -72,7 +72,7 @@ public class SceneNode : MonoBehaviour {
         //     so we need to compute qa where:
         //      q * qp = qp * qa
         // multiply both side by qp-inverset
-        //      qp=Inv * q * qp = qa
+        //      qp-Inv * q * qp = qa
         // So ...
         Quaternion qa = Quaternion.Inverse(qp) * q * qp;
         transform.localRotation = qa;
