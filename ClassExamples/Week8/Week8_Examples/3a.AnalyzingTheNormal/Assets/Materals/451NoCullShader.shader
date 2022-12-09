@@ -52,7 +52,7 @@ Shader "Unlit/451NoCullShader"
                 // o.normal = mul(transpose(unity_WorldToObject), v.normal);
 
                 //3. n * WorldToObject <-- same as doing inverse-Transpose of Model transform
-                // o.normal = mul(v.normal, unity_WorldToObject);
+                // o.normal = normalize(mul(v.normal, unity_WorldToObject));  // in case there is scaling
 
                 // 4. transform with unit_ObjectToWorld <-- WRONG
                 // o.normal = mul(v.normal, unity_ObjectToWorld);
