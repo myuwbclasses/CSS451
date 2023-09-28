@@ -45,12 +45,19 @@ for the source code.</p>
 </li>
 </ul>
 <ul>
-<li>Creating a click-runnable system
+<li style="background-color:black; color: white">Creating a click-runnable system
 <ul>
 <li>Take note of what must be included in the execution submission.</li>
 <li>MP (or machine problem, or programming assignment) submissions:
 <ul>
-<li>EXE folder: containing something I (and the grader) can double click to test run</li>
+<li><b>EXE folder</b>: containing something I (and the grader) can double click to test run. Please make sure 
+you build a <b>Re-sizable Window</b> app:
+<ul>
+    <li>Build => Player Settings</li>
+    <li>Fullscreen Mode: <b>Windowed</b> (set resolution to 1920x1080)</li>
+    <li>Resizable Window: please make sure to check this!</li>
+</ul>
+</li>
 <li>Src folder: containing the &ldquo;source system&rdquo; where we can run the editor and interactive examine your system.</li>
 </ul>
 </li>
@@ -64,7 +71,7 @@ for the source code.</p>
 <li>Debugging:
 <ul>
 <li>Unity: Run Game</li>
-<li>Visual Studio: Attach to Unity (<em>Debug</em><em>&agrave;Attach Unity Debugger</em>)</li>
+<li>Visual Studio: Attach to Unity (<em>Debug</em> => <em>Attach Unity Debugger</em>)</li>
 </ul>
 </li>
 <li>Cameras: Notice, there are two
@@ -74,7 +81,11 @@ for the source code.</p>
 <li>ALT-LMB to tumble (rotate) this camera in the editor</li>
 </ul>
 </li>
-<li><strong>Main Camera: </strong>this is the camera that presents the game when you run.</li>
+<li><strong>Main Camera: </strong>this is the camera that presents the game when you run. 
+<ul>
+    <li>RMB over this object and try out the <b>align with view</b> option.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>Lastly, BUT VERY IMPORTANTLY: </strong>Potential parent-child relationship of GameObject
@@ -137,6 +148,7 @@ for the source code.</p>
 <li><strong>Resources</strong>: resources to be loaded at run time</li>
 <li><strong>Source: </strong>source code system, folder structure for future growth: Prefab, UI [there will be more, much more!]</li>
 </ul>
+<li>We will be working with <i>TextMesh Pro</i>, if you see a <i>TMP Importer</i> window, do go ahead and <i>Import TMP Essentials</i> (I did not import the example and extras, those are beyond the need for this class).</li>
 <li>BUT, how to mouse-click to select? Before we learn about mouse-clicking, let's reaffirm variables and Unity component references ...&nbsp;</li>
 </ul>
 <p>&nbsp;</p>
@@ -177,23 +189,27 @@ for the source code.</p>
 	<li>Click on DeleteCube, and click on CreateCube again, what happens now? (A new Cube is created)</li>
 </ul>
 </li>
-<li><strong>First point to note: </strong>"C#&nbsp;Scripts" (MonoBehavior objects) are "components", just like GameObject
+<li><strong>First point to note: </strong>"C#&nbsp;Scripts" (MonoBehavior objects) are "components" of a GameObject, Scripts, or MonoBehaviors are <i>not</i> GameObject themselves.
 <ul>
 	<li>Notice: how these things are Destroy() [same function call to remove them]</li>
 </ul>
 </li>
-<li><strong>Second point to note:&nbsp;</strong>components can be referenced by variables&nbsp; and create/delete dynamically at run time.
+<li><strong>Second point to note: </strong>components can be referenced by variables, created/deleted dynamically at run time, and, we can create many copies of component to be attached to the same GameObject.
 <ul>
 	<li>Notice: both GameObject and "C# Scripts" can be created and deleted during run time.</li>
-	<li>The action of "draggin" a script onto a GameObject to associate the defined behavior with the object, actually:
+	<li>The action of "dragging" a script onto a GameObject to associate the defined behavior with the object, actually:
 		<ul>
 			<li>Create a new instance of the script object (e.g., MoveInX)</li>
 			<li>Create a reference from the GameObject to the new script (e.g., the MoveInX object.)</li>
 			<li>This is exactly the same as calling GameObject.AddComponent&lt;DataType&gt;() [called in MainControl::CreateComponent()].&nbsp;</li>
 		</ul>
 	</li>
-</ul>
+    <li>Keep on clicking the "Create MoveInX" button to 
+attach multiple copies of the component on the Cube. Similarly, in 
+the editor, you can drag the script onto the Object
+multiple times.</li>
 </li>
+</ul>
 </ul>
 
 
@@ -214,7 +230,43 @@ for the source code.</p>
 </ul>
 </li>
 </ul>
-<h3><strong>Example 5. GroupingUI</strong>: grouping related GUI objects together</h3>
+
+
+<p>&nbsp;</p>
+<h3><strong>Example 5. Selection Layers and Mask</strong>: A little more details on mouse seleciton</h3>
+<ul>
+<li>Scene: Layers (you can edit this): named three layers
+<ul>
+    <li>Sphere, Cylinder, Plane: 6, 7 and 8</li>
+    <li>MySphere, MyClinder, and MyPlane are each assigned to their own layers</li>
+</ul>
+</li>
+<li> New GUI element: LayerSelection a drop down menu 
+<ul>
+    <li>Options: added in the layers</li>
+    <li>On Value Change: selected MainControl::LayerSelecitonChange() as call back, with LayerSelection as the parameter of the function.</li>
+</ul>
+</li>
+<li>MainController_MouseSupport.cs (Source/UI_Support)
+    <ul>
+        <li><i>LayerMask</i>: set by the LayerSelectionChange() function. </li>
+        <li>EventSystem::IsPointerOverGameObject(): mouse pointer is over 
+        an <i>EventSystem</i> game object, i.e., mouse is over an UI element. Only attempt to select an
+        object if mouse is not over an GUI element.
+        </li>
+        <li>RayCast function: receives a new <i>UseMask</i> only attempt to select objects in 
+        the identified layer.</li>
+    </ul>
+</li>
+<li>Only objects in the proper layer can be selected by mouse click. Newly created cube will 
+be in the Default layer. </li>
+<li><b>Try</b>: remove the IsPointerOverGameObject() check, and note that mouse attempt to Select
+a new object even when you are clicking on GUI elements.</li>
+</ul>
+</li>
+</ul>
+
+<h3><strong>Example 6. GroupingUI</strong>: grouping related GUI objects together</h3>
 <ul>
 <li><strong>ObjectControlPanel</strong> UI element (in Hierarchy window: inside MainCanvas)
 <ul>

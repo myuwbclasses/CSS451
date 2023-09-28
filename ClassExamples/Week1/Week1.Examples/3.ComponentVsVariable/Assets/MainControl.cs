@@ -51,7 +51,9 @@ public class MainControl : MonoBehaviour {
         if ((mScript == null) && (mObject != null))
             mScript = mObject.GetComponent<MoveInX>();
 
-        Destroy(mScript);  // this will only take effect _AFTER_ this update cycle
+        if (mScript != null)
+            Destroy(mScript);  // this will only take effect _AFTER_ this update cycle
+
         mScript = null;
         
     }
@@ -67,6 +69,6 @@ public class MainControl : MonoBehaviour {
         if (mObject == null) {  // must have deleted, re-create
             mObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
         }
-        mObject.AddComponent<MoveInX>();  // what happens when we have more than one?
+        mScript = mObject.AddComponent<MoveInX>();  // what happens when we have more than one?
     }
 }

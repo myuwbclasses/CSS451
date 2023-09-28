@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // for GUI elements: Button, Toggle
+using TMPro; // this is TextMeshPro
 
 public partial class MainController : MonoBehaviour {
 
@@ -39,4 +40,6 @@ public partial class MainController : MonoBehaviour {
         c.b = b;
         m.color = c;
     }
+
+
 }
