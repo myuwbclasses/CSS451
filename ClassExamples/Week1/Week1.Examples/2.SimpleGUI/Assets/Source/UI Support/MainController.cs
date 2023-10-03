@@ -26,7 +26,7 @@ public class MainController : MonoBehaviour {
         DeleteSelectedButton.onClick.AddListener(DeleteSelectedCube);
         ShowSphereToggle.onValueChanged.AddListener(ShowSphere);
 
-        // now intialize the sphere reference
+        // now initialize the sphere reference
         mTheSphere = GameObject.Find("MySphere");
         Debug.Assert(mTheSphere != null);
 	}
