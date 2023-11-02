@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class XformLoader : MonoBehaviour {
 
-    public Transform PivotPosition;
+    public Transform ShowPivotPosition;
+    public Vector3 PivotPosition;
+        // Tree's width is about 1.1 or 1.2 in X/Z
     public bool ShowRotation = false;
     public bool ShowScale = false;
 
@@ -12,7 +15,7 @@ public class XformLoader : MonoBehaviour {
 
     // to support slow rotation about the y-axis
     private const float kRotateDelta = 45; // per second
-    private Vector3 kScaleDelta = new Vector3(0.1f, 0.1f, 0.1f); // per second
+    private Vector3 kScaleDelta = new Vector3(0.2f, 0.2f, 0.2f); // per second
     private const float kMaxSize = 5;
     private const float kMinSize = 0.2f;
     private float IncSign = 1;
@@ -26,20 +29,14 @@ public class XformLoader : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Pivot is an offset in the ObjectSpace
+        ShowPivotPosition.localPosition = transform.localPosition + PivotPosition;
+
         IncrementXform();
         Matrix4x4 m = Matrix4x4.TRS(transform.localPosition, transform.localRotation, transform.localScale);
 
-        Matrix4x4 pm = Matrix4x4.identity;  // pivot translation
-        pm[12] = PivotPosition.localPosition.x;    // col-3, row-0
-        pm[13] = PivotPosition.localPosition.y;    // col-3, row-1
-        pm[14] = PivotPosition.localPosition.z;    // col-3, row-2
-        // same as:
-        // pm = Matrix4x4.Translate(PivotPosition.localPosition);
-
-        Matrix4x4 ipm = Matrix4x4.identity;  // inverse pivot translation
-        ipm[12] = -pm[12];    // col-3, row-0
-        ipm[13] = -pm[13];    // col-3, row-1
-        ipm[14] = -pm[14];    // col-3, row-2
+        Matrix4x4 ipm = Matrix4x4.Translate(-PivotPosition);
+        Matrix4x4 pm = Matrix4x4.Translate(PivotPosition);
 
         m = pm * m * ipm;    
 
