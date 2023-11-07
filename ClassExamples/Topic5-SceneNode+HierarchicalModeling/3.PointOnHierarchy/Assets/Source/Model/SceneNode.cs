@@ -48,7 +48,7 @@ public class SceneNode : MonoBehaviour {
         // Compute AxisFrame 
         if (AxisFrame != null)
         {
-            AxisFrame.localPosition = mCombinedParentXform .MultiplyPoint(kDefaultTreeTip);
+            AxisFrame.localPosition = mCombinedParentXform.MultiplyPoint(kDefaultTreeTip);
 
             // 
             // What is going on in the next two lines of code?
