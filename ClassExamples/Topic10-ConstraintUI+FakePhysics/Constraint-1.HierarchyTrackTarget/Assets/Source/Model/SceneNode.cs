@@ -10,6 +10,7 @@ public class SceneNode : MonoBehaviour {
     
     public Vector3 NodeOrigin = Vector3.zero;
     public List<NodePrimitive> PrimitiveList;
+    public List<SceneNode> ChildrenList;
 
 	// Use this for initialization
 	protected void Start () {
@@ -37,20 +38,12 @@ public class SceneNode : MonoBehaviour {
         mCombinedParentXform = parentXform * orgT * trs;
 
         // propagate to all children
-        foreach (Transform child in transform)
-        {
-            SceneNode cn = child.GetComponent<SceneNode>();
-            if (cn != null)
-            {
-                cn.CompositeXform(ref mCombinedParentXform);
-            }
-        }
+        foreach (SceneNode child in ChildrenList)
+            child.CompositeXform(ref mCombinedParentXform);
         
-        // disenminate to primitives
+        // disseminate to primitives
         foreach (NodePrimitive p in PrimitiveList)
-        {
             p.LoadShaderMatrix(ref mCombinedParentXform);
-        }
     }
 
     public void OrbitAroundWorldY(float deltaDegree) {
@@ -71,7 +64,7 @@ public class SceneNode : MonoBehaviour {
         // But this sceneNode's rotation is applied _BEFORE_ parent rotation, 
         //     so we need to compute qa where:
         //      q * qp = qp * qa
-        // multiply both side by qp-inverset
+        // multiply both side by qp-inverse
         //      qp-Inv * q * qp = qa
         // So ...
         Quaternion qa = Quaternion.Inverse(qp) * q * qp;
@@ -80,9 +73,12 @@ public class SceneNode : MonoBehaviour {
 
     public void RotateUpTowardsBy(Vector3 dir, float delta) {
         Vector3 pUp = mParentXform.GetColumn(1).normalized;  // parent's up
+
+        // Rotate pUp towards dir, by delta-portion of the angle
         Vector3 rAxis = Vector3.Cross(pUp, dir);  // rotation axis
         float rotDegree = Mathf.Acos(Vector3.Dot(pUp, dir.normalized)) * Mathf.Rad2Deg; // angle to rotate
         Quaternion q = Quaternion.AngleAxis(delta*rotDegree, rAxis);  // rotate by delta of the actual angle
+        
         // qp is parent rotation
         Quaternion qp = Quaternion.LookRotation(mParentXform.GetColumn(2), mParentXform.GetColumn(1));
         transform.localRotation = Quaternion.Inverse(qp) * q * qp; // same as AlignUpWith();

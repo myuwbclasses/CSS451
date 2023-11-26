@@ -22,7 +22,7 @@ public class LaunchSystem : MonoBehaviour
         {
             Launch = false;
 
-            float size = 2f * transform.localScale.y;  // use this as the "strenth" of the launcher
+            float size = 2f * transform.localScale.y;  // use this as the "strength" of the launcher
 
             MySphere.transform.localPosition = transform.localPosition + size * transform.up;  // put the sphere here
             MySphere.Velocity = size * LaunchSpeedScale * transform.up; // Follow the current up direction
