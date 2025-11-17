@@ -25,9 +25,6 @@ public partial class MainController : MonoBehaviour {
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, kPlaneLayer))
             {
                 mSelectionPoint.localPosition = hitInfo.point;
-                // This is not good (or acceptable) programming style, but, 
-                // for easy to follow code, let's do this
-                TheWorld.FrontTip.localPosition = hitInfo.point;
             }
             
         }   
