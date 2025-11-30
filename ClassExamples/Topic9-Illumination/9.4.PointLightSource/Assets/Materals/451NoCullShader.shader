@@ -5,6 +5,8 @@ Shader "Unlit/451NoCullShader"
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+        _MinTheta("Min Theta", Range(0,1.5)) = 0
+        _MaxTheta("Max Theta", Range(0,1.5)) = 0.6
 	}
 	SubShader
 	{
@@ -42,6 +44,11 @@ Shader "Unlit/451NoCullShader"
             fixed4 LightColor;
             float  LightNear;
             float  LightFar;
+
+            float3 LightDirection;
+            float3 SlightPos;
+            float _MinTheta;
+            float _MaxTheta;
 			
 			v2f vert (appdata v)
 			{
@@ -63,22 +70,25 @@ Shader "Unlit/451NoCullShader"
 			
             // our own function
             float ComputeDiffuse(v2f i) {
-                float3 l = LightPosition - i.vertexWC;
+                float3 l = SlightPos - i.vertexWC;
                 float d = length(l);
                 l = l / d;
-                float strength = 1;
-                
+                float strength = 0;
+
+                float alpha = dot(l, LightDirection);
+                alpha = acos(alpha);
                 float ndotl = clamp(dot(i.normal, l), 0, 1);
-                if (d > LightNear) {
-                    if (d < LightFar) {
-                        float range = LightFar - LightNear;
-                        float n = d - LightNear;
-                        strength = smoothstep(0, 1, 1.0 - (n*n) / (range*range));
+
+                if (alpha < _MaxTheta) {
+                    if (alpha > _MinTheta) {
+                        float range = _MaxTheta - _MinTheta;
+                        float n = _MinTheta - alpha;
+                        strength = smoothstep(1, 0, (n*n) / (range*range));
                     }
                     else {
-                        strength = 0;
+                        strength = 1;
                     }
-                }
+                } 
                 return ndotl * strength;
             }
 

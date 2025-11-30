@@ -68,7 +68,9 @@ public class SceneNode : MonoBehaviour {
         //      qp-Inv * q * qp = qa @
         // So ...
         Quaternion qa = Quaternion.Inverse(qp) * q * qp;
-        transform.localRotation = qa;
+        Debug.Log(gameObject.name + " Align Up: y=" + mParentXform.GetColumn(1) + " z=" + mParentXform.GetColumn(2));
+        Debug.Log (gameObject.name + " qp=" + qp + "  Qa=" + qa + "  q=" + q);
+        transform.localRotation = q;
     }
 
     public void RotateUpTowardsBy(Vector3 dir, float delta) {
@@ -80,8 +82,13 @@ public class SceneNode : MonoBehaviour {
         Quaternion q = Quaternion.AngleAxis(delta*rotDegree, rAxis);  // rotate by delta of the actual angle
         
         // qp is parent rotation
-        Quaternion qp = Quaternion.LookRotation(mParentXform.GetColumn(2), mParentXform.GetColumn(1));
-        transform.localRotation = Quaternion.Inverse(qp) * q * qp; // same as AlignUpWith();
+        Vector3 y = mParentXform.GetColumn(1).normalized;
+        Vector3 z = mParentXform.GetColumn(2).normalized;
+        Quaternion qp = Quaternion.LookRotation(z, y);
+        Quaternion qa = Quaternion.Inverse(qp) * q * qp;
+        Debug.Log(gameObject.name + " Rotate towards: y=" + y + " z=" + z);
+        Debug.Log (gameObject.name + " qp=" + qp + " Qa=" + qa + "  q=" + q);
+        transform.localRotation = q; // Quaternion.Inverse(qp) * q * qp; // same as AlignUpWith();
     }
 
     public void SetAxisFrame(Transform t) { 

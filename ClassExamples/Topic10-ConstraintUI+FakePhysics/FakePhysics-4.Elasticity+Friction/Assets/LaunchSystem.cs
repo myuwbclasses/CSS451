@@ -28,7 +28,6 @@ public class LaunchSystem : MonoBehaviour
             SimpleMotionPhysics s = g.AddComponent<SimpleMotionPhysics>();
             s.transform.localPosition = transform.localPosition + size * transform.up;  // put the sphere here
             s.Velocity = size * LaunchSpeedScale * transform.up; // Follow the current up direction
-            s.Acceleration = Vector3.zero;  // Initial acceleration follow the current up
             s.GravitationPull = GravitationPull * Vector3.up;
             s.Friction = Friction;
             s.Elasticity = Elasticity;

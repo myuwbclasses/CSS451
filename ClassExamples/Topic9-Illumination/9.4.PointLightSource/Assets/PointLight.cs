@@ -11,6 +11,8 @@ public class PointLight : MonoBehaviour {
     public GameObject n, f;
     public bool ShowLightRanges = false;
 
+    public Transform DirLight; 
+
 
 	// Use this for initialization @
 	void Start () {
@@ -41,5 +43,8 @@ public class PointLight : MonoBehaviour {
         Shader.SetGlobalColor("LightColor", LightColor);
         Shader.SetGlobalFloat("LightNear", Near);
         Shader.SetGlobalFloat("LightFar", Far);
+
+        Shader.SetGlobalVector("LightDirection", DirLight.up);
+        Shader.SetGlobalVector("SlightPos", DirLight.localPosition);
     }
 }

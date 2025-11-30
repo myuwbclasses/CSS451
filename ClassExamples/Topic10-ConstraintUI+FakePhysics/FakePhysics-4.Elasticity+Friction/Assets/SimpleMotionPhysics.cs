@@ -5,7 +5,6 @@ using UnityEngine;
 public class SimpleMotionPhysics : MonoBehaviour
 {
     public Vector3 GravitationPull = -Vector3.up;  // default is dropping downwards
-    public Vector3 Acceleration = Vector3.zero;  // default is dropping downwards
     public Vector3 Velocity = Vector3.zero;
 
     // These should be set according to the physical properties of the colliding object
@@ -35,7 +34,7 @@ public class SimpleMotionPhysics : MonoBehaviour
 
             // we want to decompose the Velocity into two components
             //     one in the direction of the normal of collision <-- elasticity will affect this
-            //     one in the direction that is perpenticular to the normal <-- friction will affect this
+            //     one in the direction that is perpendicular to the normal <-- friction will affect this
 
             Vector3 v = Velocity.normalized;
             // First check if Velocity and N are parallel
@@ -73,8 +72,7 @@ public class SimpleMotionPhysics : MonoBehaviour
             }
         }
 
-        Acceleration += GravitationPull * Time.smoothDeltaTime;        // change in acceleration
-        Velocity += Acceleration * Time.smoothDeltaTime;               // change in Velocity
+        Velocity += GravitationPull * Time.smoothDeltaTime;               // change in Velocity
         transform.localPosition += Velocity * Time.smoothDeltaTime;    // change in position
     }
 
